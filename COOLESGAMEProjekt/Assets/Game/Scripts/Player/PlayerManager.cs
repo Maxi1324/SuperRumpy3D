@@ -6,7 +6,9 @@ public class PlayerManager : MonoBehaviour
 {
     public PlayerInfo PInfo;
     public SimplePlayerMovement SPMovement;
-    public float maxSpeed = 1f;
+    public float maxSpeed {get; set; } = 1f;
+    public int AllowedMoves { get; set; } = 0;
+    public LayerMask mask;
 
     private void Reset()
     {
@@ -18,10 +20,13 @@ public class PlayerManager : MonoBehaviour
     {
         float XAxis = Input.GetAxis(PInfo.XAxis);
         float YAxis = Input.GetAxis(PInfo.YAxis);
-        bool run = Input.GetButtonDown(PInfo.B);
+        bool run = Input.GetButton(PInfo.B);
+        bool jump = Input.GetButtonDown(PInfo.A);
 
-        SPMovement.SimpleMovement(XAxis, YAxis, run);
-        MaxSpeed();
+        if (jump && AllowedMoves == 0) SPMovement.StartJump();
+        if(AllowedMoves == 0) SPMovement.SimpleMovement(XAxis, YAxis, run);
+        
+        if(maxSpeed != -1)MaxSpeed();
     }
 
     private void MaxSpeed()
@@ -29,8 +34,8 @@ public class PlayerManager : MonoBehaviour
         Rigidbody rigidbody = PInfo.rb;
         if (rigidbody.velocity.magnitude > maxSpeed)
         {
-            rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
+            Vector3 newV = rigidbody.velocity.normalized * maxSpeed;
+            rigidbody.velocity = new Vector3(newV.x, rigidbody.velocity.y, newV.z);
         }
-
     }
 }

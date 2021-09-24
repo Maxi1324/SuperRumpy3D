@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
         localGoal = CamWorldOffset;
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         if (wantToClear)
@@ -67,7 +67,6 @@ public class CameraController : MonoBehaviour
 
     public void toTrack(List<Vector3> vecs)
     {
-        Debug.Log("angekommen");
         wantToClear = false;
         vecs.ForEach((Vector3 v) =>
         {

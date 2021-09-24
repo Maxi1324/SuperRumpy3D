@@ -47,9 +47,9 @@ public class SimplePlayerMovement : MonoBehaviour
         Vector3 turnDir = (quaternion * Vector3.forward * yAxis + quaternion * Vector3.right * xAxis).normalized;
         float mult = 1f;
 
-        if ((turnDir - transform.forward).magnitude > .1f && (turnDir != new Vector3(0,0,0)))
+        if ((turnDir - transform.forward).magnitude > .1f && (turnDir.magnitude > 0.05f))
         {
-            Debug.DrawRay(transform.position, turnDir, Color.green, 10);
+            //Debug.DrawRay(transform.position, turnDir, Color.green, 10);
             Quaternion rotation = Quaternion.LookRotation(turnDir, Vector3.up);
             // transform.rotation = rotation;
             LookDir = rotation;
@@ -72,11 +72,27 @@ public class SimplePlayerMovement : MonoBehaviour
         PManager.AllowedMoves = 1;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.layer == 7)
+        if(collision.gameObject.layer == 7 || collision.transform.tag == "Map")
         {
             PManager.AllowedMoves = 0;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "MovePlattform")
+        {
+            transform.parent = collision.transform;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.transform.tag == "MovePlattform")
+        {
+            transform.parent = null;
         }
     }
 }

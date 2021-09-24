@@ -6,6 +6,7 @@ using Cinemachine;
 public class CameraController : MonoBehaviour
 {
     public Vector3 CamWorldOffset;
+    public CinemachineTargetGroup targetGroup;
     Queue<Vector3> ToGetToOffset = new Queue<Vector3>();
     Vector3 localGoal;
     Vector3 lastLocalGoal;
@@ -22,14 +23,24 @@ public class CameraController : MonoBehaviour
     {
         transposer = cam.GetCinemachineComponent<CinemachineTransposer>();
         localGoal = CamWorldOffset;
+
+        PlayerManager[] manager = FindObjectsOfType<PlayerManager>();
+
+        for (int i = 0; i < manager.Length; i++)
+        {
+            CinemachineTargetGroup.Target target;
+            target.target = manager[i].transform;
+            target.radius = 20;
+            target.weight = 1;
+            targetGroup.m_Targets.SetValue(target, i);
+        }
     }
 
     void FixedUpdate()
     {
-
         if (wantToClear)
         {
-            if(changeToNormal > backToWorldOffset)
+            if (changeToNormal > backToWorldOffset)
             {
                 clearReal();
             }
@@ -45,10 +56,10 @@ public class CameraController : MonoBehaviour
             if (ToGetToOffset.Count != 0)
             {
                 localGoal = ToGetToOffset.Dequeue();
-                if(localGoal.x == 999) localGoal = new Vector3(lastLocalGoal.x, localGoal.y, localGoal.z);
-                if(localGoal.y == 999) localGoal = new Vector3(localGoal.x, lastLocalGoal.y, localGoal.z);
-                if(localGoal.z == 999) localGoal = new Vector3(localGoal.x, localGoal.y, lastLocalGoal.z);
-                
+                if (localGoal.x == 999) localGoal = new Vector3(lastLocalGoal.x, localGoal.y, localGoal.z);
+                if (localGoal.y == 999) localGoal = new Vector3(localGoal.x, lastLocalGoal.y, localGoal.z);
+                if (localGoal.z == 999) localGoal = new Vector3(localGoal.x, localGoal.y, lastLocalGoal.z);
+
             }
         }
         else
@@ -58,7 +69,8 @@ public class CameraController : MonoBehaviour
             {
                 transposer.m_FollowOffset = Vector3.Slerp(FollowOffset, localGoal, t);
             }
-            else{
+            else
+            {
                 lastLocalGoal = localGoal;
                 localGoal = Vector3.zero;
             }
@@ -68,6 +80,7 @@ public class CameraController : MonoBehaviour
     public void toTrack(List<Vector3> vecs)
     {
         wantToClear = false;
+        ToGetToOffset.Clear();
         vecs.ForEach((Vector3 v) =>
         {
             ToGetToOffset.Enqueue(v);

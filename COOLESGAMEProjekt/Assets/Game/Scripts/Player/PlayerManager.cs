@@ -18,10 +18,12 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        float XAxis = Input.GetAxis(PInfo.XAxis);
-        float YAxis = Input.GetAxis(PInfo.YAxis);
-        bool run = Input.GetButton(PInfo.B);
-        bool jump = Input.GetButtonDown(PInfo.A);
+        string added = (PInfo.PlayerNum == 0) ? "" : PInfo.PlayerNum.ToString();
+
+        float XAxis = Input.GetAxis(PInfo.XAxis + added);
+        float YAxis = Input.GetAxis(PInfo.YAxis + added);
+        bool run = Input.GetButton(PInfo.B + added);
+        bool jump = Input.GetButtonDown(PInfo.A + added);
 
         if (jump && AllowedMoves == 0) SPMovement.StartJump();
         if(AllowedMoves == 0) SPMovement.SimpleMovement(XAxis, YAxis, run);

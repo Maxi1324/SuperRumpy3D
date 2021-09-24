@@ -22,7 +22,7 @@ public class CameraZone : MonoBehaviour
         if (CController == null) Reset();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {

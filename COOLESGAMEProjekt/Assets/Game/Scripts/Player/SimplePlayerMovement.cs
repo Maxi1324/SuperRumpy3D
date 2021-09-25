@@ -10,6 +10,7 @@ public class SimplePlayerMovement : MonoBehaviour
 
     private bool JumpNotPressedUp = false;
     private bool jumpStarted = false;
+    private bool wasNotOnGround = false;
 
     private float timer = 0;
 
@@ -21,7 +22,8 @@ public class SimplePlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (LookDir != null) smothRotation();
-       
+
+        if (!PManager.onGround) wasNotOnGround = true;
         if (jumpStarted)
         {
             PlayerInfo PInfo = PManager.PInfo;
@@ -36,7 +38,7 @@ public class SimplePlayerMovement : MonoBehaviour
                 PInfo.Rb.AddForce(Vector3.up * 250 * PInfo.Rb.mass * Time.deltaTime);
             }
 
-            if (PManager.onGround && timer > .2f)
+            if (PManager.onGround && (timer > 5||wasNotOnGround))
             {
                 PManager.AllowedMoves = 0;
                 JumpNotPressedUp = false;
@@ -98,27 +100,7 @@ public class SimplePlayerMovement : MonoBehaviour
             JumpNotPressedUp = true;
             jumpStarted = true;
             timer = 0;
-        }
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.tag == "MovePlattform")
-        {
-            transform.parent = collision.transform;
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.transform.tag == "MovePlattform")
-        {
-            transform.parent = null;
+            wasNotOnGround = false;
         }
     }
 }

@@ -37,13 +37,13 @@ public class PlayerManager : MonoBehaviour
         jumpPressed = Input.GetButtonDown(PInfo.A + added);
         jump = Input.GetButton(PInfo.A + added);
 
-        onGround = Physics.CheckSphere(groundTrans.position, .1f, groundMask);
+        onGround = Physics.CheckSphere(groundTrans.position, .3f, groundMask);
 
-        if (jumpPressed && AllowedMoves == 0 && onGround) SPMovement.StartJump();
+        if (jump && AllowedMoves == 0 && onGround) SPMovement.StartJump();
         if(AllowedMoves == 0) SPMovement.SimpleMovement(XAxis, YAxis, run,1);
         if(AllowedMoves == 1) SPMovement.SimpleMovement(XAxis, YAxis, run,PInfo.SpeedMultInAir);
         
-        MaxSpeed();
+       // MaxSpeed();
     }
 
     private void MaxSpeed()

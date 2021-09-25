@@ -27,7 +27,11 @@ public class MovingPlattform : MonoBehaviour
     {
         //transform.position = Vector3.Slerp(transform.position, poses[atStep].position, speed);
         Vector3 vec = (poses[atStep].position - transform.position).normalized;
-        if(!wait && !waitForPlayer) transform.position += vec * speed * Time.deltaTime;
+        if (!wait && !waitForPlayer)
+        {
+            transform.position += vec * speed * Time.deltaTime;
+            transform.rotation = Quaternion.Lerp(transform.rotation, poses[atStep].rotation, 0.01f);
+        }
         if ((transform.position - poses[atStep].position).magnitude < 1f && !wait)
         {
             wait = true;

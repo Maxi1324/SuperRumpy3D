@@ -31,44 +31,43 @@ public class SimplePlayerMovement : MonoBehaviour
     public void SimpleMovement(float xAxis, float yAxis, bool run)
     {
         PlayerInfo PInfo = PManager.PInfo;
-        Rigidbody Rb = PManager.PInfo.rb;
+        Rigidbody Rb = PManager.PInfo.Rb;
 
         float speed = (run) ? PInfo.RunSpeed : PInfo.WalkSpeed;
-        if (PManager.maxSpeed != speed)
-        {
-            PManager.maxSpeed = speed;
-        }
-
         Quaternion quaternion = Quaternion.Euler(0, PInfo.Camera.transform.rotation.eulerAngles.y, 0);
-
-        // Rb.AddForce(quaternion * Vector3.forward * Time.deltaTime * PInfo.Beschleunigung * yAxis);
-        //Rb.AddForce(quaternion * Vector3.right * Time.deltaTime * PInfo.Beschleunigung * xAxis);
-
         Vector3 turnDir = (quaternion * Vector3.forward * yAxis + quaternion * Vector3.right * xAxis).normalized;
         float mult = 1f;
 
         if ((turnDir - transform.forward).magnitude > .1f && (turnDir.magnitude > 0.05f))
         {
-            //Debug.DrawRay(transform.position, turnDir, Color.green, 10);
             Quaternion rotation = Quaternion.LookRotation(turnDir, Vector3.up);
-            // transform.rotation = rotation;
             LookDir = rotation;
             mult = 0.4f;
         }
+
+        Vector3 moveVec = (quaternion * Vector3.forward * speed * yAxis) +
+        (quaternion * Vector3.right * speed * xAxis);
+        if (moveVec.magnitude > speed) moveVec = moveVec.normalized * speed;
+        Vector3 v = Rb.velocity;
+        //Projektion v auf moveVec
+        float L = Vector3.Dot(v, moveVec) / Vector3.Dot(moveVec, moveVec);
+        Debug.Log(L);
+        if(L < 1)
         {
-            Rb.AddForce(quaternion * Vector3.forward * Time.deltaTime * PInfo.Beschleunigung * yAxis * mult);
-            Rb.AddForce(quaternion * Vector3.right * Time.deltaTime * PInfo.Beschleunigung * xAxis * mult);
+            Vector3 mVecNorm = moveVec.normalized;
+            float multV = 1-L;
+            Rb.AddForce(mVecNorm*Time.deltaTime*multV*PInfo.Beschleunigung* mult);
         }
     }
 
     public void StartJump()
     {
         PlayerInfo PInfo = PManager.PInfo;
-        float v = PInfo.rb.velocity.magnitude;
+        float v = PInfo.Rb.velocity.magnitude;
 
-        PInfo.rb.velocity = PInfo.rb.velocity / 2;
-        PInfo.rb.AddForce(transform.rotation * PInfo.normalJumpForce);
-        PManager.maxSpeed = -1;
+        PInfo.Rb.velocity = PInfo.Rb.velocity / 2;
+        PInfo.Rb.AddForce(transform.rotation * PInfo.normalJumpForce);
+        //PManager.maxSpeed = -1;
         PManager.AllowedMoves = 1;
     }
 

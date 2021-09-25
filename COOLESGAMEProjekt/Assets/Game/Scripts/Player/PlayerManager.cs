@@ -6,9 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     public PlayerInfo PInfo;
     public SimplePlayerMovement SPMovement;
-    public float maxSpeed {get; set; } = 1f;
     public int AllowedMoves { get; set; } = 0;
-    public LayerMask mask;
 
     private void Reset()
     {
@@ -28,15 +26,15 @@ public class PlayerManager : MonoBehaviour
         if (jump && AllowedMoves == 0) SPMovement.StartJump();
         if(AllowedMoves == 0) SPMovement.SimpleMovement(XAxis, YAxis, run);
         
-        if(maxSpeed != -1)MaxSpeed();
+        //if(maxSpeed != -1)MaxSpeed();
     }
 
     private void MaxSpeed()
     {
-        Rigidbody rigidbody = PInfo.rb;
-        if (rigidbody.velocity.magnitude > maxSpeed)
+        Rigidbody rigidbody = PInfo.Rb;
+        if (rigidbody.velocity.magnitude > PInfo.MaxSpeed)
         {
-            Vector3 newV = rigidbody.velocity.normalized * maxSpeed;
+            Vector3 newV = rigidbody.velocity.normalized * PInfo.MaxSpeed;
             rigidbody.velocity = new Vector3(newV.x, rigidbody.velocity.y, newV.z);
         }
     }

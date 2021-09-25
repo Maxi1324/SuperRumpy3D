@@ -18,11 +18,13 @@ public class PlayerInfo : MonoBehaviour
     public Vector3 normalJumpForce = new Vector3(0,1000,2000);
     public Vector3 RunJumpForce = new Vector3(0, 1000, 4000);
 
-    public Rigidbody rb;
+    public Rigidbody Rb;
     public Transform Camera;
+
+    public float MaxSpeed = 100;
 
     private void Reset()
     {
-        rb = GetComponent<Rigidbody>();
+        Rb = GetComponent<Rigidbody>();
     }
 }

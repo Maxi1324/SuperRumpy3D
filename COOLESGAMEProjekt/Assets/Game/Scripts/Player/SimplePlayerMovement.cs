@@ -8,6 +8,11 @@ public class SimplePlayerMovement : MonoBehaviour
     public Quaternion? LookDir { get; set; }
     public float t = 0.1f;
 
+    private bool JumpNotPressedUp = false;
+    private bool jumpStarted = false;
+
+    private float timer = 0;
+
     private void Reset()
     {
         PManager = GetComponent<PlayerManager>();
@@ -16,7 +21,29 @@ public class SimplePlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (LookDir != null) smothRotation();
+       
+        if (jumpStarted)
+        {
+            PlayerInfo PInfo = PManager.PInfo;
+            Rigidbody rb = PInfo.Rb;
 
+            Debug.Log(JumpNotPressedUp);
+
+            float vy = rb.velocity.y;
+            if (!PManager.jump) JumpNotPressedUp = false;
+            if (JumpNotPressedUp && vy > 0)
+            {
+                PInfo.Rb.AddForce(Vector3.up * 250 * PInfo.Rb.mass * Time.deltaTime);
+            }
+
+            if (PManager.onGround && timer > .2f)
+            {
+                PManager.AllowedMoves = 0;
+                JumpNotPressedUp = false;
+                jumpStarted = false;
+            }
+            timer = timer + Time.deltaTime;
+        }
     }
 
     public void smothRotation()
@@ -28,12 +55,13 @@ public class SimplePlayerMovement : MonoBehaviour
         }
     }
 
-    public void SimpleMovement(float xAxis, float yAxis, bool run)
+    public void SimpleMovement(float xAxis, float yAxis, bool run, float speedMult)
     {
         PlayerInfo PInfo = PManager.PInfo;
         Rigidbody Rb = PManager.PInfo.Rb;
 
         float speed = (run) ? PInfo.RunSpeed : PInfo.WalkSpeed;
+        speed *= speedMult;
         Quaternion quaternion = Quaternion.Euler(0, PInfo.Camera.transform.rotation.eulerAngles.y, 0);
         Vector3 turnDir = (quaternion * Vector3.forward * yAxis + quaternion * Vector3.right * xAxis).normalized;
         float mult = 1f;
@@ -51,32 +79,31 @@ public class SimplePlayerMovement : MonoBehaviour
         Vector3 v = Rb.velocity;
         //Projektion v auf moveVec
         float L = Vector3.Dot(v, moveVec) / Vector3.Dot(moveVec, moveVec);
-        Debug.Log(L);
-        if(L < 1)
+        if(L < 1 && L > -0.4f)
         {
             Vector3 mVecNorm = moveVec.normalized;
-            float multV = 1-L;
-            Rb.AddForce(mVecNorm*Time.deltaTime*multV*PInfo.Beschleunigung* mult);
+            float multV = 1-(L);
+            Rb.AddForce(mVecNorm*Time.deltaTime*multV*PInfo.Beschleunigung* mult*Rb.mass);
         }
     }
 
     public void StartJump()
     {
-        PlayerInfo PInfo = PManager.PInfo;
-        float v = PInfo.Rb.velocity.magnitude;
-
-        PInfo.Rb.velocity = PInfo.Rb.velocity / 2;
-        PInfo.Rb.AddForce(transform.rotation * PInfo.normalJumpForce);
-        //PManager.maxSpeed = -1;
-        PManager.AllowedMoves = 1;
+        if (jumpStarted == false)
+        {
+            PlayerInfo PInfo = PManager.PInfo;
+            float v = PInfo.Rb.velocity.magnitude;
+            PInfo.Rb.AddForce(transform.rotation * PInfo.JumpForce * PInfo.Rb.mass);
+            PManager.AllowedMoves = 1;
+            JumpNotPressedUp = true;
+            jumpStarted = true;
+            timer = 0;
+        }
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.layer == 7 || collision.transform.tag == "Map")
-        {
-            PManager.AllowedMoves = 0;
-        }
+
     }
 
     private void OnCollisionEnter(Collision collision)

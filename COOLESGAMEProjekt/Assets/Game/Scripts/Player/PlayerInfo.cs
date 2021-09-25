@@ -14,9 +14,9 @@ public class PlayerInfo : MonoBehaviour
     public float Beschleunigung = 2000;
     public float WalkSpeed = 5;
     public float RunSpeed = 8;
+    public float SpeedMultInAir = 0.4f;
 
-    public Vector3 normalJumpForce = new Vector3(0,1000,2000);
-    public Vector3 RunJumpForce = new Vector3(0, 1000, 4000);
+    public Vector3 JumpForce = new Vector3(0,1000,2000);
 
     public Rigidbody Rb;
     public Transform Camera;

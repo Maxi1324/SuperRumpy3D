@@ -25,7 +25,7 @@ public class StandOnPlatt : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (PManager.onGround)
+        if (PManager.OnGround)
         {
             transform.parent = collision.transform;
             lastCol = transform.position;

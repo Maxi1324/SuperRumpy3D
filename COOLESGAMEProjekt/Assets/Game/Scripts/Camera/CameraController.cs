@@ -18,6 +18,12 @@ public class CameraController : MonoBehaviour
     private float changeToNormal = 0;
     private bool wantToClear;
 
+    public static CameraController CController;
+
+    public CameraController()
+    {
+        CController = this;
+    }
 
     void Start()
     {
@@ -28,11 +34,7 @@ public class CameraController : MonoBehaviour
 
         for (int i = 0; i < manager.Length; i++)
         {
-            CinemachineTargetGroup.Target target;
-            target.target = manager[i].transform;
-            target.radius = 20;
-            target.weight = 1;
-            targetGroup.m_Targets.SetValue(target, i);
+            AddToFollowList(manager[i].transform, 1, 20);
         }
     }
 
@@ -97,5 +99,23 @@ public class CameraController : MonoBehaviour
     public void clear()
     {
         wantToClear = true;
+    }
+
+    public void AddToFollowList(Transform trans, float weight, float radius = 20)
+    {
+        if (targetGroup.FindMember(trans) == -1)
+        {
+            targetGroup.AddMember(trans, weight, radius);
+            Debug.Log("da");
+        }
+    }
+
+    public void RemoveFromFollowing(Transform trans)
+    {
+        Debug.Log("weg");
+        if (targetGroup.FindMember(trans) != -1)
+        {
+            targetGroup.RemoveMember(trans);
+        }
     }
 }

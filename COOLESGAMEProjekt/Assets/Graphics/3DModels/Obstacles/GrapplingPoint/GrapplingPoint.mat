@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5144174958906664248
+--- !u!114 &-5079591821765582306
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PathMark
+  m_Name: GrapplingPoint
   m_Shader: {fileID: -6465566751694194690, guid: 5b800dfabd557c44697c6c5e76ee1ef0, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -89,7 +89,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_b73ece4ea1c140748b8d73b5ce651969: 1
+    - Vector1_b73ece4ea1c140748b8d73b5ce651969: 0.3
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -117,7 +117,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_8a940de9fa6f46b5b6e41af573dd4bd7: {r: 1, g: 0.44705886, b: 0, a: 0}
+    - Color_8a940de9fa6f46b5b6e41af573dd4bd7: {r: 1.2862746, g: 0, b: 1.4980392, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

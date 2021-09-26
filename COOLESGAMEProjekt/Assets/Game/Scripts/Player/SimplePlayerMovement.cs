@@ -23,22 +23,20 @@ public class SimplePlayerMovement : MonoBehaviour
     {
         if (LookDir != null) smothRotation();
 
-        if (!PManager.onGround) wasNotOnGround = true;
+        if (!PManager.OnGround) wasNotOnGround = true;
         if (jumpStarted)
         {
             PlayerInfo PInfo = PManager.PInfo;
             Rigidbody rb = PInfo.Rb;
 
-            Debug.Log(JumpNotPressedUp);
-
             float vy = rb.velocity.y;
-            if (!PManager.jump) JumpNotPressedUp = false;
+            if (!PManager.Jump) JumpNotPressedUp = false;
             if (JumpNotPressedUp && vy > 0)
             {
                 PInfo.Rb.AddForce(Vector3.up * 250 * PInfo.Rb.mass * Time.deltaTime);
             }
 
-            if (PManager.onGround && (timer > 5||wasNotOnGround))
+            if (PManager.OnGround && (timer > 5||wasNotOnGround))
             {
                 PManager.AllowedMoves = 0;
                 JumpNotPressedUp = false;

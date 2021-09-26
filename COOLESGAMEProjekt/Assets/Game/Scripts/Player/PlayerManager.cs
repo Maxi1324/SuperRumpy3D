@@ -6,6 +6,9 @@ public class PlayerManager : MonoBehaviour
 {
     public PlayerInfo PInfo;
     public SimplePlayerMovement SPMovement;
+
+    public List<MovementAbility> Moves; 
+
     public int AllowedMoves { get; set; } = 0;
 
     public Transform groundTrans;
@@ -14,11 +17,14 @@ public class PlayerManager : MonoBehaviour
     public string added {get; set;}
     public float XAxis {get; set;}
     public float YAxis {get; set;}
-    public bool run {get; set;}
-    public bool jumpPressed {get; set;}
-    public bool jump {get; set;}
+    public bool Run {get; set;}
+    public bool JumpPressed {get; set;}
+    public bool Jump {get; set;}
+    public bool Fire3Pressed {get; set;}
+    public bool Fire3Up { get; set;}
+    public bool Fire3 { get; set;}
 
-    public bool onGround { get; set; }
+    public bool OnGround { get; set; }
 
     private void Reset()
     {
@@ -33,16 +39,29 @@ public class PlayerManager : MonoBehaviour
 
         XAxis = Input.GetAxis(PInfo.XAxis + added);
         YAxis = Input.GetAxis(PInfo.YAxis + added);
-        run = Input.GetButton(PInfo.B + added);
-        jumpPressed = Input.GetButtonDown(PInfo.A + added);
-        jump = Input.GetButton(PInfo.A + added);
+        Run = Input.GetButton(PInfo.B + added);
+        JumpPressed = Input.GetButtonDown(PInfo.A + added);
+        Jump = Input.GetButton(PInfo.A + added);
+        Fire3Pressed = Input.GetButtonDown(PInfo.C + added);
+        Fire3 = Input.GetButton(PInfo.C + added);
+        Fire3Up = Input.GetButtonUp(PInfo.C + added);
 
-        onGround = Physics.CheckSphere(groundTrans.position, .3f, groundMask);
+        OnGround = Physics.CheckSphere(groundTrans.position, .3f, groundMask);
 
-        if (jump && AllowedMoves == 0 && onGround) SPMovement.StartJump();
-        if(AllowedMoves == 0) SPMovement.SimpleMovement(XAxis, YAxis, run,1);
-        if(AllowedMoves == 1) SPMovement.SimpleMovement(XAxis, YAxis, run,PInfo.SpeedMultInAir);
-        
+        InteractPlayer[] InteractPlayers = FindObjectsOfType<InteractPlayer>();
+
+        for (int i = 0; i < InteractPlayers.Length; i++) {
+            InteractPlayer InteractPlayer = InteractPlayers[i];
+            float dis = Vector3.Distance(InteractPlayer.transform.position, transform.position);
+            Moves.ForEach((MovementAbility ability) =>
+            {
+                 ability.Active(dis, InteractPlayer, ability.Allowed(AllowedMoves));
+            });
+        }
+
+        if (Jump && AllowedMoves == 0 && OnGround) SPMovement.StartJump();
+        if(AllowedMoves == 0) SPMovement.SimpleMovement(XAxis, YAxis, Run,1);
+        if(AllowedMoves == 1) SPMovement.SimpleMovement(XAxis, YAxis, Run,PInfo.SpeedMultInAir);
        // MaxSpeed();
     }
 

@@ -20,6 +20,7 @@ public class PlayerInfo : MonoBehaviour
 
     public Rigidbody Rb;
     public Transform Camera;
+    public LineRenderer LineRenderer; 
 
     public float MaxSpeed = 100;
 

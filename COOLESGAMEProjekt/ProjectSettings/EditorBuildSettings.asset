@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Game/Scenes/BergLevel/BergLevel.unity
+    guid: 0ee661193b3f81d42bbf7055529b8dff
+  - enabled: 1
     path: Assets/Game/Scenes/TestLevel/TestLevel.unity
     guid: 9b3507a5eed83f74080b8b2c01f554ae
   m_configObjects: {}

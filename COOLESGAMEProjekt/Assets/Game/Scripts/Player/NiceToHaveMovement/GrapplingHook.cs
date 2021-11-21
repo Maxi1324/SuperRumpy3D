@@ -20,12 +20,13 @@ public class GrapplingHook : MovementAbility
     {
         PManager = GetComponent<PlayerManager>();
     }
+    
 
     public override bool Active(float distance, InteractPlayer ob, bool allowed)
     {
         if (hookRadius > distance )
         {
-            CameraController.CController.AddToFollowList(ob.transform, 0.9f);
+            CameraController.CController.AddToFollowList(ob.transform, 50f);
             if (allowed)
             {
                 lastWasOk = true;
@@ -45,6 +46,21 @@ public class GrapplingHook : MovementAbility
         return false;
     }
 
+    private void Start()
+    {
+        NeedObject = true;
+
+        SpringJoint joint = GetComponent<SpringJoint>();
+
+        gameObject.AddComponent<SpringJoint>();
+        joint = GetComponent<SpringJoint>();
+
+        joint.anchor = Vector3.zero;
+        joint.autoConfigureConnectedAnchor = false;
+        joint.connectedAnchor = Vector3.zero;
+        joint.spring = 1.25f;
+    }
+
     private void Update()
     {
         if (PManager.AllowedMoves == 2 && hookPoint != null)
@@ -52,51 +68,47 @@ public class GrapplingHook : MovementAbility
             LineRenderer renderer = PManager.PInfo.LineRenderer;
             AnimTimer += Time.deltaTime;
 
-            Vector3 Line =  hookPoint.transform.position- transform.position ;
-            renderer.positionCount = (int)(Line.magnitude) * AnimQuality;
-            Vector3 NLine = Line.normalized;
-            float length = Line.magnitude / AnimTime;
-            Vector3 lastPos = Vector3.zero;
-
-            Quaternion quat = Quaternion.LookRotation(NLine, Vector3.up);
-            for(int i = 0; i < renderer.positionCount; i++)
+            if (!(AnimTimer > AnimTime))
             {
-                Vector3 PPosOr = (NLine / AnimQuality)*i;
-                Debug.DrawRay(transform.position, Line, Color.green);
-                Vector3 PPos = PPosOr + transform.position;
 
-                PPos += Mathf.Sin((Line.magnitude-PPosOr.magnitude)) * AnimHeight * (PPosOr.magnitude- Line.magnitude) * (AnimTime-AnimTimer) * (quat*Vector3.up);
+                Vector3 Line = hookPoint.transform.position - transform.position;
+                renderer.positionCount = (int)(Line.magnitude) * AnimQuality;
+                Vector3 NLine = Line.normalized;
+                float length = Line.magnitude / AnimTime;
+                Vector3 lastPos = Vector3.zero;
 
-                if (Line.magnitude - PPosOr.magnitude == 0) Debug.Log("wefg");
-                if (PPosOr.magnitude <= length*AnimTimer)
+                Quaternion quat = Quaternion.LookRotation(NLine, Vector3.up);
+                for (int i = 0; i < renderer.positionCount; i++)
                 {
-                    lastPos = PPos;
-                    renderer.SetPosition(i, PPos);
-                }
-                else
-                {
-                    renderer.SetPosition(i, lastPos);
+                    Vector3 PPosOr = (NLine / AnimQuality) * i;
+                    Debug.DrawRay(transform.position, Line, Color.green);
+                    Vector3 PPos = PPosOr + transform.position;
+
+                    PPos += Mathf.Sin((Line.magnitude - PPosOr.magnitude)) * AnimHeight * (PPosOr.magnitude - Line.magnitude) * (AnimTime - AnimTimer) * (quat * Vector3.up);
+
+                    if (Line.magnitude - PPosOr.magnitude == 0) Debug.Log("wefg");
+                    if (PPosOr.magnitude <= length * AnimTimer)
+                    {
+                        lastPos = PPos;
+                        renderer.SetPosition(i, PPos);
+                    }
+                    else
+                    {
+                        renderer.SetPosition(i, lastPos);
+                    }
                 }
             }
-
-
-            if (AnimTimer > AnimTime)
+            else
             {
                 renderer.positionCount = 2;
                 renderer.SetPosition(1, hookPoint.transform.position);
                 renderer.SetPosition(0, transform.position);
 
                 SpringJoint joint = GetComponent<SpringJoint>();
-                if (joint == null)
+                if (joint.massScale == .000000001f)
                 {
-                    gameObject.AddComponent<SpringJoint>();
-                    joint = GetComponent<SpringJoint>();
-
                     joint.connectedBody = hookPoint.GetComponent<Rigidbody>();
-                    joint.anchor = Vector3.zero;
-                    joint.autoConfigureConnectedAnchor = false;
-                    joint.connectedAnchor = Vector3.zero;
-                    joint.spring = 1.25f;
+                    joint.massScale = 1;
                 }
             }
         }
@@ -106,14 +118,15 @@ public class GrapplingHook : MovementAbility
             renderer.positionCount = 0;
 
             SpringJoint joint = GetComponent<SpringJoint>();
-            if (joint != null)
+            if (joint.massScale != .000000001f)
             {
-                Destroy(joint);
+                joint.massScale = .000000001f;
+                joint.connectedBody = null;
             }
         }
         if ((hookPoint != null && !PManager.Fire3) || PManager.OnGround)
         {
-            CameraController.CController.RemoveFromFollowing(hookPoint);
+           // CameraController.CController.RemoveFromFollowing(hookPoint);
             AnimTimer = 0;
             hookPoint = null;
             PManager.AllowedMoves = 1;

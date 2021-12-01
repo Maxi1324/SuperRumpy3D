@@ -35,3 +35,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.log
+COOLESGAMEProjekt/Assets/Game/Scenes/BergLevel/BergLevel/OcclusionCullingData.asset

@@ -30,6 +30,16 @@ public class CameraControllerGood : MonoBehaviour
         Transposer = VirtualCamera.GetCinemachineComponent<CinemachineTransposer>();
     }
 
+    public void UpdatePlayers()
+    {
+        for(int i = 0; i < Targetgroup.m_Targets.Length; i++)
+        {
+            CinemachineTargetGroup.Target target = Targetgroup.m_Targets[i];
+            Targetgroup.RemoveMember(target.target.transform);
+        }
+        FindPlayers();
+    }
+
     private void LateUpdate()
     {
         DoOffset();

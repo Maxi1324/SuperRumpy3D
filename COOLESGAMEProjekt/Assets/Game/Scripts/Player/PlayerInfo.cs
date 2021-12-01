@@ -26,6 +26,13 @@ public class PlayerInfo : MonoBehaviour
 
     public float MaxSpeed = 100;
 
+    public object Client { get; internal set; }
+
+    public void CloneInfo(PlayerInfo NewInfo)
+    {
+        NewInfo.Camera = Camera;
+    }
+
     private void Reset()
     {
         Rb = GetComponent<Rigidbody>();

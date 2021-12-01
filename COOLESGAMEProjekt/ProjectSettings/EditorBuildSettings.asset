@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Game/Scenes/NetworkingMatchmaking/Matchmaking.unity
+    guid: ea79cdd02df46b347b1a9d86e2534d31
+  - enabled: 1
     path: Assets/Game/Scenes/BergLevel/BergLevel.unity
     guid: 0ee661193b3f81d42bbf7055529b8dff
   - enabled: 1

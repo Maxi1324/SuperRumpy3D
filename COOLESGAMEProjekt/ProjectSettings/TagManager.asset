@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Map
   - MovePlattform
+  - Kill
   layers:
   - Default
   - TransparentFX

@@ -2,34 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Nutzt das nicht. Nutzt lieber MovingPlattform; ist besser
-public class UpDown : MonoBehaviour
+namespace Env
 {
-    public float TimeDur;
-    public float distance;
-    public Vector3 Dir;
 
-    private float Speed;
-    private bool AktDir;
-    private float timer;
-
-    private void Start()
+    //Nutzt das nicht. Nutzt lieber MovingPlattform; ist besser
+    public class UpDown : MonoBehaviour
     {
-        Speed = distance / TimeDur;
-        Dir = Dir.normalized;
-    }
+        public float TimeDur;
+        public float distance;
+        public Vector3 Dir;
 
-    void Update()
-    {
-        timer += Time.deltaTime;
-        if (timer > TimeDur)
+        private float Speed;
+        private bool AktDir;
+        private float timer;
+
+        private void Start()
         {
-            timer = 0;
-            AktDir = !AktDir;
+            Speed = distance / TimeDur;
+            Dir = Dir.normalized;
         }
-        else
+
+        void Update()
         {
-            transform.Translate(Dir * Speed * (AktDir ? 1 : -1)*Time.deltaTime);
+            timer += Time.deltaTime;
+            if (timer > TimeDur)
+            {
+                timer = 0;
+                AktDir = !AktDir;
+            }
+            else
+            {
+                transform.Translate(Dir * Speed * (AktDir ? 1 : -1) * Time.deltaTime);
+            }
         }
     }
 }

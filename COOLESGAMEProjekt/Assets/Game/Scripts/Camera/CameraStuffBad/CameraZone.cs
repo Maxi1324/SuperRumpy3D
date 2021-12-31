@@ -4,45 +4,48 @@ using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-public class CameraZone : MonoBehaviour
+namespace Camera.Bad
 {
-    public Vector3 BounceSize;
-    public List<Vector3> offets = new List<Vector3>(1);
-    public CameraController CController;
-
-    private bool collided = false;
-
-    private void Reset()
+    public class CameraZone : MonoBehaviour
     {
-        CController = FindObjectOfType<CameraController>();
-    }
+        public Vector3 BounceSize;
+        public List<Vector3> offets = new List<Vector3>(1);
+        public CameraController CController;
 
-    private void Start()
-    {
-        if (CController == null) Reset();
-    }
+        private bool collided = false;
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Player")
+        private void Reset()
         {
-            CController.toTrack(offets);
+            CController = FindObjectOfType<CameraController>();
         }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
+
+        private void Start()
         {
-            CController.clear();
+            if (CController == null) Reset();
         }
-    }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.tag == "Player")
+            {
+                CController.toTrack(offets);
+            }
+        }
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.tag == "Player")
+            {
+                CController.clear();
+            }
+        }
 
 #if UNITY_EDITOR
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = new Color(1, 0, 0, .5f);
-        //Gizmos.DrawCube(transform.position+GetComponent<BoxCollider>().center, GetComponent<BoxCollider>().size*0.575f);
-    }
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = new Color(1, 0, 0, .5f);
+            //Gizmos.DrawCube(transform.position+GetComponent<BoxCollider>().center, GetComponent<BoxCollider>().size*0.575f);
+        }
 #endif
 
+    }
 }

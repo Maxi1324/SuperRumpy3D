@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraZoneGood : MonoBehaviour
+namespace Camera
 {
-    public Vector3 Offset;
-    public bool relativeOffset = true;
-
-    private void OnTriggerEnter(Collider other)
+    public class CameraZoneGood : MonoBehaviour
     {
-        if (other.transform.tag == "Player")
+        public Vector3 Offset;
+        public bool relativeOffset = true;
+
+        private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("setOffsetr");
-            CameraControllerGood.Instance.Offset = (relativeOffset) ? transform.rotation * Offset : Offset;
+            if (other.transform.tag == "Player")
+            {
+                CameraControllerGood.Instance.Offset = (relativeOffset) ? transform.rotation * Offset : Offset;
+            }
         }
     }
 }
-
 /*
  * PlayerEntdecken also Collision
  * Offset des CameraControllers ändern

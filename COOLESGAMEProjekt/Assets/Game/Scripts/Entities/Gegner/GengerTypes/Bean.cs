@@ -1,6 +1,7 @@
 ﻿using Enemy.MovementDefinitions;
 using Entity;
 using Entity.Player;
+using Generell.SoundManagement;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -14,9 +15,15 @@ namespace Enemy.Types
 
         private MovementCircle MC;
 
+        public AudioSource AS1;
+        public AudioSource AS2;
+        public AudioSource AS3;
+
         public override IDamageHandler DamageHandler => this;
 
         public int aktLeben => 1;
+
+        
 
         public void Die()
         {
@@ -66,17 +73,42 @@ namespace Enemy.Types
                 }
                 else
                 {
-                    Vector3 rueckstoss = new Vector3(dir.x, 0.1f, dir.z) * 3000;
+                    Vector3 rueckstoss = new Vector3(dir.x, 0.05f, dir.z) * 3000;
                     Debug.DrawLine(transform.position, dir * 100000, Color.red);
                     ent.DamageHandler.Hit(dir, rueckstoss, true, 1);
                 }
             }
         }
 
+        IEnumerator Steps()
+        {
+            bool Toggle = false;
+            while (gameObject.activeSelf)
+            {
+                if (Toggle)
+                {
+                    AS1.Play();
+                }
+                else
+                {
+                    AS2.Play();
+                }
+                Toggle = !Toggle;
+                yield return new WaitForSeconds(1);
+            }
+        }
+
         IEnumerator die()
         {
+            AS3.Play();
             yield return new WaitForSeconds(0.5f);
             Destroy(gameObject);
+
+        }
+
+        public override void Start2()
+        {
+            StartCoroutine(Steps());
         }
     }
 }

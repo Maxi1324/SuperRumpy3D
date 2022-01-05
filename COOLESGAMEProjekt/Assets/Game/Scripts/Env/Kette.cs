@@ -46,6 +46,10 @@ namespace Env
                 {
                     Rigidbody rb = LK.GetComponent<Rigidbody>();
                     rb.mass = 100;
+                    rb.constraints = RigidbodyConstraints.FreezeRotationX |
+                                     RigidbodyConstraints.FreezeRotationY |
+                                     RigidbodyConstraints.FreezeRotationZ;
+
                     transform.parent = LK.transform;
                 }
                 lastRig = LK.GetComponent<Rigidbody>();

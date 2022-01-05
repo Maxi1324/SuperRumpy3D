@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UI;
 using Entity.Player;
+using System.Collections;
 
 namespace Generell.LevelManager1
 {
@@ -17,11 +18,15 @@ namespace Generell.LevelManager1
 
         public List<UIPlayerInfo> UIPlayerInfo { get; set; } = new List<UIPlayerInfo>();
 
+        public int Coins;
+        public int Timer;
+
         private bool inited = false;
 
         private void Start()
         {
-            UIPlayerInfo.Add(new UI.UIPlayerInfo() { ControllerNum = 0, PlayerNum = 1, Skin = PlayerSkin.MoneyBoy, PlayerName = "Der Coole" });
+            UIPlayerInfo.Add(new UIPlayerInfo() { ControllerNum = 0, PlayerNum = 1, Skin = PlayerSkin.MoneyBoy, PlayerName = "Der Coole" });
+            StartCoroutine(TimerSR());
             InitLevel();
         }
 
@@ -38,6 +43,7 @@ namespace Generell.LevelManager1
             }
             else
             {
+                Spawn();
                 inited = true;
             }
         }
@@ -66,5 +72,13 @@ namespace Generell.LevelManager1
             Info.Camera = cam;
         }
 
+        IEnumerator TimerSR()
+        {
+            while (true)
+            {
+                Timer++;
+                yield return new WaitForSeconds(1);
+            }
+        }
     }
 }

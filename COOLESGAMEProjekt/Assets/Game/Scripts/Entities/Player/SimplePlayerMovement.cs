@@ -1,3 +1,4 @@
+using Generell.SoundManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,9 +21,17 @@ namespace Entity.Player
 
         private float TimeWhenStarted;
 
+        private bool isWaliking = false;
+        private float stepSpeed = .1f;
+
         private void Reset()
         {
             PManager = GetComponent<PlayerManager>();
+        }
+
+        private void Start()
+        {
+            StartCoroutine(Steps());
         }
 
         private void FixedUpdate()
@@ -114,11 +123,35 @@ namespace Entity.Player
                 PInfo.Anim.SetBool("isWalking", true);
                 if (run) PInfo.Anim.SetInteger("stateRunning", (runningTimer > 3) ? 2 : 1);
                 runningTimer += Time.deltaTime;
+                isWaliking = true;
+                stepSpeed = run ? .3f : .5f;
+            }
+            if(xAxis == 0 && yAxis == 0)
+            {
+                isWaliking = false;
             }
             if (!run)
             {
                 runningTimer = 0;
             }
+        }
+
+        IEnumerator Steps()
+        {
+            bool Toggle = false;
+            while (true)
+            {
+                if (isWaliking && PManager.OnGround == true)
+                {
+                    SoundManager.Play("Step" + (Toggle ? "1" : "2"));
+                    Toggle = !Toggle;
+                    yield return new WaitForSeconds(stepSpeed);
+                }
+                else
+                {
+                    yield return null;
+                }
+            } 
         }
 
         public void StartJump()

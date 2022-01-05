@@ -1,3 +1,4 @@
+using Generell.SoundManagement;
 using Obstacles;
 using System;
 using System.Collections;
@@ -15,10 +16,15 @@ namespace Entity.Player
 
         public int AllowedMoves { get; set; } = 0;
         //-1 = nichts
+        // 0 = Normal Default Herumstehen 
+        // 1 = In der Lufe
+        // 2 = Grappling Hook
+        // 3 = BetterJump
 
         public Transform groundTrans;
         public LayerMask groundMask;
         public float MaxGroundDis = 1.5f;
+        public AudioSource DieSound;
 
         public string added { get; set; }
         public float XAxis { get; set; }
@@ -78,7 +84,6 @@ namespace Entity.Player
             InteractPlayer[] InteractPlayersA = FindObjectsOfType<InteractPlayer>();
             List<InteractPlayer> InteractPlayers = new List<InteractPlayer>(InteractPlayersA);
             InteractPlayers.Sort(new comp());
-
             for (int i = 0; i < InteractPlayers.Count; i++)
             {
                 InteractPlayer InteractPlayer = InteractPlayers[i];
@@ -153,9 +158,15 @@ namespace Entity.Player
 
         public void Die()
         {
+            DieSound.Play();
             GameObject ob = Instantiate(PInfo.DieParikel, transform.position, transform.rotation);
             StartCoroutine(DestroyParticle(ob.GetComponent<ParticleSystem>()));
-            gameObject.SetActive(false);
+            Invincible = true;
+            StartCoroutine(DoInNSec(() =>
+            {
+                gameObject.SetActive(false);
+                Invincible = false;
+            }, 1));
         }
 
         public void Heal()
@@ -196,6 +207,14 @@ namespace Entity.Player
                     scale(new Vector3(StartScale.x * 0.9f, StartScale.y * 0.5f, StartScale.z * 0.9f));
                 }
             }
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if(collision.transform.tag == "Hit1")
+            {
+                Hit(new Vector3(0, 0, 0), new Vector3(0, 0, 0), true, 1);
+            }   
         }
 
         public IEnumerator DoInNSec(Action ac, int n)

@@ -48,7 +48,10 @@ namespace Enemy
             }
             Rb.isKinematic = true;
             InitMovements();
+            Start2();
         }
+
+        public abstract void Start2();
 
         private void Reset()
         {

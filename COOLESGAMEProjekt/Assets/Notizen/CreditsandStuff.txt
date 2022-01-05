@@ -2,3 +2,6 @@
 GrasShader + Tool: Minios Art https://www.patreon.com/posts/grass-geometry-2-40077798
 Example Partikel Effects: Unity 
 OpenNat: https://www.nuget.org/packages/Open.Nat/2.1.0
+Beautiful Progress Bar Free Loadingbars: https://assetstore.unity.com/packages/2d/gui/icons/beautiful-progress-bar-free-194904
+Clean Vector Icons:https://assetstore.unity.com/packages/2d/gui/icons/clean-vector-icons-132084
+EasyFPSCounter: https://assetstore.unity.com/packages/tools/integration/easy-fps-counter-130203

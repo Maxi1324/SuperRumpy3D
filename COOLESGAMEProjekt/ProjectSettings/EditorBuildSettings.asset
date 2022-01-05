@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Game/Scenes/UI/CharacterSelection.unity
+    guid: 7a24c9083c475d143af53a09536903a8
+  - enabled: 1
     path: Assets/Game/Scenes/BergLevel/BergLevel.unity
     guid: 0ee661193b3f81d42bbf7055529b8dff
   - enabled: 1
     path: Assets/Game/Scenes/TestLevel/TestLevel.unity
     guid: 9b3507a5eed83f74080b8b2c01f554ae
   - enabled: 1
-    path: Assets/Game/Scenes/UI/CharacterSelection.unity
-    guid: 7a24c9083c475d143af53a09536903a8
+    path: Assets/Game/Scenes/BergLevelSubarea1/BergLevelSubarea1.unity
+    guid: 93ba379a9b4f7184d8886add78a858ac
   m_configObjects: {}

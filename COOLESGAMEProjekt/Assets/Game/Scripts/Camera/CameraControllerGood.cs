@@ -43,7 +43,7 @@ namespace Camera
             FindPlayers();
         }
 
-        private void LateUpdate()
+        private void FixedUpdate()
         {
             DoOffset();
             UpdatePlayers();

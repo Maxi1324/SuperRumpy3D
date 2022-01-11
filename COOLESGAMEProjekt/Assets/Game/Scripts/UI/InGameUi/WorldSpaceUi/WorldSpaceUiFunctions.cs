@@ -47,8 +47,20 @@ namespace UI.InGameUi
             ob.transform.parent = WSAlwaysOnTopCanvas.transform;
 
             StartCoroutine(FaceCamera(ob.transform, WSAlwaysOnTopCanvas.worldCamera.transform));
-            Pulsieren(true, ob.transform.localScale, ob,0.75f, 0.8f);
+            StartCoroutine(InGameUiFunktions.Instance.ScaleUD(true, ob.transform.localScale, () =>
+            {
+                Pulsieren(true, ob.transform.localScale, ob, 0.75f, 0.75f);
+            }, ob,0,.8f));
             return ob;
+        }
+
+        public void DestroyTooltip(GameObject Tooltip, Action Fertig)
+        {
+            StartCoroutine(InGameUiFunktions.Instance.ScaleUD(false, Tooltip.transform.localScale, () =>
+            {
+                Destroy(Tooltip);
+                Fertig();
+            }, Tooltip, 0, .7f));
         }
 
         void Pulsieren(bool InOrOut, Vector3 LS,GameObject ob, float min, float t)

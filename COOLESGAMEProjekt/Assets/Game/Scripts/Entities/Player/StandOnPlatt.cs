@@ -17,20 +17,12 @@ namespace Entity.Player.Extras
 
         private void Update()
         {
-            Transform parent = transform.parent;
-            if (Vector3.Distance(lastCol, transform.position) > dis)
-            {
-                transform.parent = null;
-            }
+            
         }
-
+        // neu Implementieren
         private void OnCollisionStay(Collision collision)
         {
-            if (PManager.OnGround)
-            {
-                transform.parent = collision.transform;
-                lastCol = transform.position;
-            }
+           
         }
     }
 }

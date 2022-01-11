@@ -13,26 +13,30 @@ using UnityEngine;
 /// Definieren, ob das Movement gerade gemacht werden kann(Allowedmoves checken)
 /// Definieren der Active Methode.
 /// </remarks>
-public abstract class MovementAbility : MonoBehaviour
+/// 
+namespace Entity.Player.Abilities
 {
-    /// <summary>
-    /// Entscheidet, ob ein InteractOB gebraucht wird.
-    /// </summary>
-    public bool NeedObject { get; set; }
-    
-    /// <summary>
-    /// Definiert, was jetzt genau gemacht werden soll.
-    /// </summary>
-    /// <param name="distance"></param>
-    /// <param name="ob"></param>
-    /// <param name="allowed"></param>
-    /// <returns></returns>
-    public abstract bool Active(float distance,InteractPlayer ob, bool allowed);
+    public abstract class MovementAbility : MonoBehaviour
+    {
+        /// <summary>
+        /// Entscheidet, ob ein InteractOB gebraucht wird.
+        /// </summary>
+        public bool NeedObject { get; set; }
 
-    /// <summary>
-    /// Definiert, ob das hier alles passieren darf. Muss selber genutzt werden, lol^123
-    /// </summary>
-    /// <param name="allowedMoves"></param>
-    /// <returns></returns>
-    public abstract bool Allowed(int allowedMoves);
+        /// <summary>
+        /// Definiert, was jetzt genau gemacht werden soll.
+        /// </summary>
+        /// <param name="distance"></param>
+        /// <param name="ob"></param>
+        /// <param name="allowed"></param>
+        /// <returns></returns>
+        public abstract bool Active(float distance, InteractPlayer ob, bool allowed);
+
+        /// <summary>
+        /// Definiert, ob das hier alles passieren darf. Muss selber genutzt werden, lol^123
+        /// </summary>
+        /// <param name="allowedMoves"></param>
+        /// <returns></returns>
+        public abstract bool Allowed(int allowedMoves);
+    }
 }

@@ -1,3 +1,4 @@
+using Entity.Player.Abilities;
 using Generell.SoundManagement;
 using Obstacles;
 using System;
@@ -15,11 +16,13 @@ namespace Entity.Player
         public List<MovementAbility> Moves;
 
         public int AllowedMoves { get; set; } = 0;
+        public bool WantStandOnPlatt { get; set; } = true;
         //-1 = nichts
         // 0 = Normal Default Herumstehen 
         // 1 = In der Lufe
         // 2 = Grappling Hook
         // 3 = BetterJump
+        // 4 = Rutschen
 
         public Transform groundTrans;
         public LayerMask groundMask;
@@ -37,6 +40,7 @@ namespace Entity.Player
         public bool Fire3 { get; set; }
 
         public bool OnGround { get; set; }
+        public Vector3 OnGroundNormal { get; set; }
         public bool Invincible { get; set; } = false;
 
         public int aktLeben { get; private set; }
@@ -72,7 +76,11 @@ namespace Entity.Player
             Fire3 = Input.GetButton(PInfo.C + added);
             Fire3Up = Input.GetButtonUp(PInfo.C + added);
 
-            OnGround = checkGround(MaxGroundDis);
+
+            Tuple<bool, Vector3> t = checkGround(MaxGroundDis);
+            OnGround = t.Item1;
+            OnGroundNormal = t.Item2;
+
             float abnahme = 0.97f;
             if (XAxis == 0 && YAxis == 0)
             {
@@ -112,8 +120,8 @@ namespace Entity.Player
         private void FrameAnim()
         {
             Animator Anim = PInfo.Anim;
-
-            bool animBoden = checkGround(MaxGroundDis * 3);
+            Tuple<bool,Vector3> t = checkGround(MaxGroundDis * 3);
+            bool animBoden = t.Item1;
             Anim.SetBool("onGround", animBoden);
             Anim.SetBool("isWalking", false);
             Anim.SetInteger("stateRunning", 0);
@@ -129,16 +137,12 @@ namespace Entity.Player
             }
         }
 
-        private bool checkGround(float length)
+        private Tuple<bool,Vector3> checkGround(float length)
         {
             RaycastHit hit;
             bool hit1 = Physics.Raycast(groundTrans.position, -transform.up, out hit, length, groundMask);
-            if (hit1)
 
-            {
-            }
-
-            return hit1;
+            return new Tuple<bool,Vector3>(hit1, hit.normal);
         }
 
         public void Spawn(Vector3 pos)
@@ -217,7 +221,7 @@ namespace Entity.Player
             }   
         }
 
-        public IEnumerator DoInNSec(Action ac, int n)
+        public static IEnumerator DoInNSec(Action ac, int n)
         {
             yield return new WaitForSeconds(n);
             ac();

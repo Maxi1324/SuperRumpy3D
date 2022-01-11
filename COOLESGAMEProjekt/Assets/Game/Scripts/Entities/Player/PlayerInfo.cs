@@ -24,6 +24,9 @@ namespace Entity.Player
 
         public Vector3 JumpForce = new Vector3(0, 1139.24f, 0);
 
+        public PhysicMaterial PMaterialNormal;
+        public PhysicMaterial PMaterialSliding;
+
         public Rigidbody Rb;
         public Transform Camera;
         public LineRenderer LineRenderer;

@@ -36,6 +36,7 @@ namespace Entity.Player
 
         private void FixedUpdate()
         {
+            if (!(PManager.AllowedMoves == 1 || PManager.AllowedMoves == 0)) return;
             if (LookDir != null) smothRotation();
 
             if (!PManager.OnGround) wasNotOnGround = true;

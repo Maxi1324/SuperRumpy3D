@@ -15,6 +15,7 @@ namespace Entity.Player
         public string A = "Fire1";
         public string B = "Fire2";
         public string C = "Fire3";
+        public string Bumper = "Bumper";
 
         public float Beschleunigung = 40000;
         public float WalkSpeed = 30;
@@ -23,6 +24,9 @@ namespace Entity.Player
         public float SpeedMultInAir = 0.6f;
 
         public Vector3 JumpForce = new Vector3(0, 1139.24f, 0);
+
+        public PhysicMaterial PMaterialNormal;
+        public PhysicMaterial PMaterialSliding;
 
         public Rigidbody Rb;
         public Transform Camera;

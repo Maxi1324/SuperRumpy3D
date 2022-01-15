@@ -1,3 +1,4 @@
+using Entity.Player.Abilities;
 using Generell.SoundManagement;
 using Obstacles;
 using System;
@@ -15,11 +16,14 @@ namespace Entity.Player
         public List<MovementAbility> Moves;
 
         public int AllowedMoves { get; set; } = 0;
+        public bool WantStandOnPlatt { get; set; } = true;
         //-1 = nichts
         // 0 = Normal Default Herumstehen 
         // 1 = In der Lufe
         // 2 = Grappling Hook
         // 3 = BetterJump
+        // 4 = Rutschen
+        // 5 = LongJump
 
         public Transform groundTrans;
         public LayerMask groundMask;
@@ -35,8 +39,14 @@ namespace Entity.Player
         public bool Fire3Pressed { get; set; }
         public bool Fire3Up { get; set; }
         public bool Fire3 { get; set; }
+        public bool BumperDown { get; set; }
+        public bool Bumper { get; set; }
+        public bool BumperUp { get; set; }
+
+        private bool BumperWasDown = false;
 
         public bool OnGround { get; set; }
+        public Vector3 OnGroundNormal { get; set; }
         public bool Invincible { get; set; } = false;
 
         public int aktLeben { get; private set; }
@@ -71,14 +81,34 @@ namespace Entity.Player
             Fire3Pressed = Input.GetButtonDown(PInfo.C + added);
             Fire3 = Input.GetButton(PInfo.C + added);
             Fire3Up = Input.GetButtonUp(PInfo.C + added);
+            float Bumper1 = Input.GetAxis(PInfo.Bumper + added);
 
-            OnGround = checkGround(MaxGroundDis);
+            BumperUp = Mathf.Abs(Bumper1) < 0.1f && !BumperWasDown;
+            BumperDown = (Mathf.Abs(Bumper1) > 0.8f) && BumperWasDown;
+            Bumper = (Mathf.Abs(Bumper1) > 0.8f);
+
+           //Debug.Log($"Bumper:{Bumper} BumperDown:{BumperDown} BumerpUp:{BumperUp}");
+           // Debug.Log(Bumper1);
+
+            if((Mathf.Abs(Bumper1) > 0.8f))
+            {
+                BumperWasDown = false;
+            }
+            if (Mathf.Abs(Bumper1) < 0.1f)
+            {
+                BumperWasDown = true;
+            }
+
+            Tuple<bool, Vector3> t = checkGround(MaxGroundDis);
+            OnGround = t.Item1;
+            OnGroundNormal = t.Item2;
+
             float abnahme = 0.97f;
             if (XAxis == 0 && YAxis == 0)
             {
                 abnahme = 0.94f;
             }
-            PInfo.Rb.velocity = new Vector3(PInfo.Rb.velocity.x * abnahme, (y < 0f && y > -100) ? y * 1.03f : y, PInfo.Rb.velocity.z * abnahme);
+            if(AllowedMoves != 5)PInfo.Rb.velocity = new Vector3(PInfo.Rb.velocity.x * abnahme, (y < 0f && y > -100) ? y * 1.03f : y, PInfo.Rb.velocity.z * abnahme);
             FrameAnim();
 
             InteractPlayer[] InteractPlayersA = FindObjectsOfType<InteractPlayer>();
@@ -112,8 +142,8 @@ namespace Entity.Player
         private void FrameAnim()
         {
             Animator Anim = PInfo.Anim;
-
-            bool animBoden = checkGround(MaxGroundDis * 3);
+            Tuple<bool,Vector3> t = checkGround(MaxGroundDis * 3);
+            bool animBoden = t.Item1;
             Anim.SetBool("onGround", animBoden);
             Anim.SetBool("isWalking", false);
             Anim.SetInteger("stateRunning", 0);
@@ -129,16 +159,12 @@ namespace Entity.Player
             }
         }
 
-        private bool checkGround(float length)
+        private Tuple<bool,Vector3> checkGround(float length)
         {
             RaycastHit hit;
             bool hit1 = Physics.Raycast(groundTrans.position, -transform.up, out hit, length, groundMask);
-            if (hit1)
 
-            {
-            }
-
-            return hit1;
+            return new Tuple<bool,Vector3>(hit1, hit.normal);
         }
 
         public void Spawn(Vector3 pos)
@@ -217,7 +243,7 @@ namespace Entity.Player
             }   
         }
 
-        public IEnumerator DoInNSec(Action ac, int n)
+        public static IEnumerator DoInNSec(Action ac, int n)
         {
             yield return new WaitForSeconds(n);
             ac();

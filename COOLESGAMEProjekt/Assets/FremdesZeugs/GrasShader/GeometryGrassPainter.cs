@@ -1,4 +1,3 @@
-#if Unity_Editor
 
 using System.Collections;
 using System.Collections.Generic;
@@ -268,4 +267,3 @@ public class GeometryGrassPainter : MonoBehaviour
         }
     }
 }
-#endif

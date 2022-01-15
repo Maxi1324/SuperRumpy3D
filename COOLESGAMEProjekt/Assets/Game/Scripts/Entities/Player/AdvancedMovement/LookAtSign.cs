@@ -31,22 +31,33 @@ namespace Entity.Player.Abilities
         {
             if (allowed)
             {
-              
-                if(distance < maxDis && ob.key == "Schild" )
+                if (ob.key == "Schild")
                 {
-                    if (Tooltip == null)
+                    if (distance < maxDis)
                     {
-                        Tooltip = WorldSpaceUiFunctions.Instance.ShowTooltip(UI.InGameUi.Tooltip.A, PM.PInfo.PHandTransform.position);
-                        StartCoroutine(WorldSpaceUiFunctions.Instance.FollowTransform(PM.PInfo.PHandTransform, Tooltip.transform));
-                    }
-                    if (PM.Fire3Pressed) {
-                        Schild schild = ob.GetComponent<Schild>();
-                        PM.AllowedMoves = -1;
-                        schild.show(() =>
+                        if (Tooltip == null)
                         {
-                            PM.AllowedMoves = 0;
-                        });
-                        return true;
+                            Tooltip = WorldSpaceUiFunctions.Instance.ShowTooltip(UI.InGameUi.Tooltip.A, PM.PInfo.PHandTransform.position);
+                            StartCoroutine(WorldSpaceUiFunctions.Instance.FollowTransform(PM.PInfo.PHandTransform, Tooltip.transform));
+                        }
+                        if (PM.Fire3Pressed)
+                        {
+                            Schild schild = ob.GetComponent<Schild>();
+                            PM.AllowedMoves = -1;
+                            schild.show(() =>
+                            {
+                                PM.AllowedMoves = 0;
+                            });
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        if (Tooltip != null)
+                        {
+                            WorldSpaceUiFunctions.Instance.DestroyTooltip(Tooltip,()=> { });
+                            Tooltip = null;
+                        }
                     }
                 }
             }

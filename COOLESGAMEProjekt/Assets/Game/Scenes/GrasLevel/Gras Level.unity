@@ -1480,7 +1480,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289438054}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2226,7 +2226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3225392605105630381, guid: 769d344db1b87c94f9323b31389297af, type: 3}
       propertyPath: m_Lens.FarClipPlane
-      value: 400
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 3894024053590955923, guid: 769d344db1b87c94f9323b31389297af, type: 3}
       propertyPath: field of view
@@ -2234,7 +2234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3894024053590955923, guid: 769d344db1b87c94f9323b31389297af, type: 3}
       propertyPath: far clip plane
-      value: 400
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 4871189117935464585, guid: 769d344db1b87c94f9323b31389297af, type: 3}
       propertyPath: m_IsActive

@@ -23,6 +23,7 @@ namespace Entity.Player
         // 2 = Grappling Hook
         // 3 = BetterJump
         // 4 = Rutschen
+        // 5 = LongJump
 
         public Transform groundTrans;
         public LayerMask groundMask;
@@ -38,6 +39,11 @@ namespace Entity.Player
         public bool Fire3Pressed { get; set; }
         public bool Fire3Up { get; set; }
         public bool Fire3 { get; set; }
+        public bool BumperDown { get; set; }
+        public bool Bumper { get; set; }
+        public bool BumperUp { get; set; }
+
+        private bool BumperWasDown = false;
 
         public bool OnGround { get; set; }
         public Vector3 OnGroundNormal { get; set; }
@@ -75,7 +81,23 @@ namespace Entity.Player
             Fire3Pressed = Input.GetButtonDown(PInfo.C + added);
             Fire3 = Input.GetButton(PInfo.C + added);
             Fire3Up = Input.GetButtonUp(PInfo.C + added);
+            float Bumper1 = Input.GetAxis(PInfo.Bumper + added);
 
+            BumperUp = Mathf.Abs(Bumper1) < 0.1f && !BumperWasDown;
+            BumperDown = (Mathf.Abs(Bumper1) > 0.8f) && BumperWasDown;
+            Bumper = (Mathf.Abs(Bumper1) > 0.8f);
+
+           //Debug.Log($"Bumper:{Bumper} BumperDown:{BumperDown} BumerpUp:{BumperUp}");
+           // Debug.Log(Bumper1);
+
+            if((Mathf.Abs(Bumper1) > 0.8f))
+            {
+                BumperWasDown = false;
+            }
+            if (Mathf.Abs(Bumper1) < 0.1f)
+            {
+                BumperWasDown = true;
+            }
 
             Tuple<bool, Vector3> t = checkGround(MaxGroundDis);
             OnGround = t.Item1;
@@ -86,7 +108,7 @@ namespace Entity.Player
             {
                 abnahme = 0.94f;
             }
-            PInfo.Rb.velocity = new Vector3(PInfo.Rb.velocity.x * abnahme, (y < 0f && y > -100) ? y * 1.03f : y, PInfo.Rb.velocity.z * abnahme);
+            if(AllowedMoves != 5)PInfo.Rb.velocity = new Vector3(PInfo.Rb.velocity.x * abnahme, (y < 0f && y > -100) ? y * 1.03f : y, PInfo.Rb.velocity.z * abnahme);
             FrameAnim();
 
             InteractPlayer[] InteractPlayersA = FindObjectsOfType<InteractPlayer>();

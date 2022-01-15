@@ -53,7 +53,7 @@ namespace Entity.Player.Abilities
                         Vector3 dir = MB.Move(transform, () => {
                             st();
                         });
-                        if (dir != Vector3.zero) return false;
+                        //if (dir != Vector3.zero) return false;
                         dir = new Vector3(dir.x, 0, dir.z).normalized;
                         Player.transform.parent = ob.transform;
                         transform.position = ob.transform.position - (dir * 4.5f);

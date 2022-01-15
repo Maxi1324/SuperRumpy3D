@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.3/release' branch; Version is '2020.3.12f1 (b3b2c6512326) revision 11776710'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19043.1415; Version 2009; 64bit' Language: 'de' Physical Memory: 16221 MB
+OS: 'Windows 10 Home; OS build 19043.1466; Version 2009; 64bit' Language: 'de' Physical Memory: 8136 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -11,63 +11,65 @@ C:\Program Files\Unity\Hub\Editor\2020.3.12f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-D:/0000Schule/20210919_SUNDAY_PRE/PREProjekt/COOLESGAME/COOLESGAMEProjekt
+F:/0000Schule/20210919_SUNDAY_PRE/PREProjekt/COOLESGAME/COOLESGAMEProjekt
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52800
-Successfully changed project path to: D:/0000Schule/20210919_SUNDAY_PRE/PREProjekt/COOLESGAME/COOLESGAMEProjekt
-D:/0000Schule/20210919_SUNDAY_PRE/PREProjekt/COOLESGAME/COOLESGAMEProjekt
+52555
+Successfully changed project path to: F:/0000Schule/20210919_SUNDAY_PRE/PREProjekt/COOLESGAME/COOLESGAMEProjekt
+F:/0000Schule/20210919_SUNDAY_PRE/PREProjekt/COOLESGAME/COOLESGAMEProjekt
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 175.84 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 108.12 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.12f1 (b3b2c6512326)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/0000Schule/20210919_SUNDAY_PRE/PREProjekt/COOLESGAME/COOLESGAMEProjekt/Assets
+[Subsystems] Discovering subsystems at path F:/0000Schule/20210919_SUNDAY_PRE/PREProjekt/COOLESGAME/COOLESGAMEProjekt/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f15)
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
     Vendor:   
-    VRAM:     5980 MB
-    Driver:   30.0.14.9613
+    VRAM:     6052 MB
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56068
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56128
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003648 seconds.
+Registered in 0.010169 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 122.68 ms, found 2 plugins.
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 104.44 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.833 seconds
+- Completed reload, in  4.016 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006769 seconds.
+Registered in 0.006984 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 128.65 ms, found 2 plugins.
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 178.81 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.174 seconds
+- Completed reload, in  4.940 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 1.44 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.16 seconds
+Refreshing native plugins compatible for Editor in 1.64 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4190 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 287.2 MB.
-System memory in use after: 284.9 MB.
+Unloading 4192 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 287.7 MB.
+System memory in use after: 285.4 MB.
 
-Unloading 49 unused Assets to reduce memory usage. Loaded Objects now: 4624.
-Total: 6.977300 ms (FindLiveObjects: 0.535500 ms CreateObjectMapping: 0.390800 ms MarkObjects: 4.041600 ms  DeleteObjects: 2.007500 ms)
+Unloading 49 unused Assets to reduce memory usage. Loaded Objects now: 4626.
+Total: 8.805900 ms (FindLiveObjects: 0.566200 ms CreateObjectMapping: 0.421000 ms MarkObjects: 5.293500 ms  DeleteObjects: 2.522200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -81,88 +83,286 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Game/Scenes/BergLevelSubarea2/BergLevelSubarea2.unity
-  artifactKey: Guid(7041bf94ede78cb4ab31a47369ef64c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Game/Scenes/BergLevelSubarea2/BergLevelSubarea2.unity using Guid(7041bf94ede78cb4ab31a47369ef64c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '121b7cd6713c796afd43ebfb551e56b7') in 0.062295 seconds 
-  Import took 0.580207 seconds .
+  path: Assets/Game/Scenes/CreditsScene/Credits.unity
+  artifactKey: Guid(43a0990c7f7808b47b42b61d0604f36c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/CreditsScene/Credits.unity using Guid(43a0990c7f7808b47b42b61d0604f36c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54b9919ec1dbcde0a63d69167e695fff') in 0.059123 seconds 
+  Import took 0.446989 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 43.789980 seconds.
-  path: Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/HJump/HighJumpSArea.blend1
-  artifactKey: Guid(d3fbc0559c9b9d0429a7f34ce99c13e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/HJump/HighJumpSArea.blend1 using Guid(d3fbc0559c9b9d0429a7f34ce99c13e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f747645c125fb523941a63431e99a67') in 0.083456 seconds 
-  Import took 0.121099 seconds .
+  Time since last request: 0.000680 seconds.
+  path: Assets/Game/Scenes/CreditsScene
+  artifactKey: Guid(e264170a0f11441488fc50307d11fc90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/CreditsScene using Guid(e264170a0f11441488fc50307d11fc90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ff1e450e979e4aee54aad34bc9fb9a0') in 0.026865 seconds 
+  Import took 0.072051 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.746039 seconds.
-  path: Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche
-  artifactKey: Guid(4cc0563a95613704991b3fc2c3faffea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche using Guid(4cc0563a95613704991b3fc2c3faffea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f76e6841d7854f1aad191209bb2376a6') in 0.122396 seconds 
-  Import took 0.287145 seconds .
+  Time since last request: 0.000284 seconds.
+  path: Assets/Game/Scenes/BergLevelSubarea2
+  artifactKey: Guid(03beb7176e4f48447af86b8927532743) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/BergLevelSubarea2 using Guid(03beb7176e4f48447af86b8927532743) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61665e1ebd8a0e6edd2ab584a0c91c76') in 0.013701 seconds 
+  Import took 0.065877 seconds .
+
+========================================================================
+Received Prepare
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 529.33 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 42 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 197.1 MB.
+System memory in use after: 194.8 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 4626.
+Total: 12.875200 ms (FindLiveObjects: 0.686300 ms CreateObjectMapping: 0.605100 ms MarkObjects: 9.668300 ms  DeleteObjects: 1.912700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 82.976662 seconds.
+  path: Assets/Game/Scenes/GrasLevel/Gras Level.unity
+  artifactKey: Guid(22212e897786b4f4abebc29039e86302) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/GrasLevel/Gras Level.unity using Guid(22212e897786b4f4abebc29039e86302) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '559c81784dc8ffbd17e7d0a32ea5c14d') in 0.215211 seconds 
+  Import took 0.284149 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000653 seconds.
-  path: Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche/RutschenSubArea.blend
-  artifactKey: Guid(33464b1da2addaf4e808cd600d7d93b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche/RutschenSubArea.blend using Guid(33464b1da2addaf4e808cd600d7d93b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '124dd26f23bd6b68e898171de0e4f4d5') in 0.493797 seconds 
-  Import took 0.519618 seconds .
+  Time since last request: 93.421884 seconds.
+  path: Assets/Graphics/Shader/Gras
+  artifactKey: Guid(6d004acac40dce045a476dd09d028d3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Shader/Gras using Guid(6d004acac40dce045a476dd09d028d3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab9b343cc12fdb2bf3b83015211d5ed7') in 0.009887 seconds 
+  Import took 0.064496 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000553 seconds.
-  path: Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche/RutschenSubArea.fbx
-  artifactKey: Guid(e5cc77fee615fad468c9945e109f2ca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche/RutschenSubArea.fbx using Guid(e5cc77fee615fad468c9945e109f2ca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd86223bfc6aede876613c7115d77327b') in 0.371003 seconds 
-  Import took 0.449958 seconds .
+  Time since last request: 16.045260 seconds.
+  path: Assets/Graphics/Shader/Gras/GrasShader1.shadergraph
+  artifactKey: Guid(4f4bdd589762f214f999e56e6de1fc85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Shader/Gras/GrasShader1.shadergraph using Guid(4f4bdd589762f214f999e56e6de1fc85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa79cc5ceba4942ce3be5e4f167343aa') in 0.058191 seconds 
+  Import took 0.155681 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 30.592826 seconds.
-  path: Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche/RutschenSubArea.blend
-  artifactKey: Guid(33464b1da2addaf4e808cd600d7d93b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche/RutschenSubArea.blend using Guid(33464b1da2addaf4e808cd600d7d93b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef86fa040efc3fc9124d35acc40f1a57') in 0.233024 seconds 
-  Import took 0.527927 seconds .
+  Time since last request: 3.232432 seconds.
+  path: Assets/Graphics/Shader/Gras/GrasShader1.shadergraph
+  artifactKey: Guid(4f4bdd589762f214f999e56e6de1fc85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Shader/Gras/GrasShader1.shadergraph using Guid(4f4bdd589762f214f999e56e6de1fc85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa79cc5ceba4942ce3be5e4f167343aa') in 0.009608 seconds 
+  Import took 0.024952 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000563 seconds.
-  path: Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche/RutschenSubArea.fbx
-  artifactKey: Guid(e5cc77fee615fad468c9945e109f2ca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche/RutschenSubArea.fbx using Guid(e5cc77fee615fad468c9945e109f2ca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28e2e8ad355fe4a3321c38b4a9be2581') in 0.233170 seconds 
-  Import took 0.260613 seconds .
+  Time since last request: 4.787512 seconds.
+  path: Assets/Graphics/Shader/Gras/Gras.mat
+  artifactKey: Guid(e63da4c79f5bab8458840bfbecf6c70e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Shader/Gras/Gras.mat using Guid(e63da4c79f5bab8458840bfbecf6c70e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5698e6e7cd0a4c5142d18f6516ff3e8e') in 0.419776 seconds 
+  Import took 0.462185 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.667980 seconds.
-  path: Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche/UndergroudnStoneS2.mat
-  artifactKey: Guid(4f8e3ad8a5cb84e428988fc6d09e863a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche/UndergroudnStoneS2.mat using Guid(4f8e3ad8a5cb84e428988fc6d09e863a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '195a99c565dd4793efe91e4e672b8595') in 0.077172 seconds 
-  Import took 0.099750 seconds .
+  Time since last request: 504.019339 seconds.
+  path: Assets/Graphics/Shader/Gras/GrasShader1.shadergraph
+  artifactKey: Guid(4f4bdd589762f214f999e56e6de1fc85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Shader/Gras/GrasShader1.shadergraph using Guid(4f4bdd589762f214f999e56e6de1fc85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4bd137bab3d804f0619e6cd765b6fc0') in 0.041126 seconds 
+  Import took 0.090998 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 47.582408 seconds.
-  path: Assets/Game/Prefabs/Player/Player.prefab
-  artifactKey: Guid(8a00bb11c815f4646bb2c4661b3812a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Game/Prefabs/Player/Player.prefab using Guid(8a00bb11c815f4646bb2c4661b3812a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67c7a1f2cef45a9749225e30ef77675f') in 0.469234 seconds 
-  Import took 0.669341 seconds .
+  Time since last request: 176.111001 seconds.
+  path: Assets/Graphics/3DModels/Levels/Gras-Level
+  artifactKey: Guid(3b4735619f76ce14aa5f442cbb0fcc0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/3DModels/Levels/Gras-Level using Guid(3b4735619f76ce14aa5f442cbb0fcc0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23d60e7a59106433e352723a9542a940') in 0.021780 seconds 
+  Import took 0.131291 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 263.559707 seconds.
-  path: Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche/UndergroudnStoneS2.mat
-  artifactKey: Guid(4f8e3ad8a5cb84e428988fc6d09e863a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche/UndergroudnStoneS2.mat using Guid(4f8e3ad8a5cb84e428988fc6d09e863a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9872bee9abbcad3963a875625c38989f') in 0.027361 seconds 
-  Import took 0.074008 seconds .
+  Time since last request: 0.000616 seconds.
+  path: Assets/Graphics/3DModels/Levels/Gras-Level/baum_ohne_blätter.blend
+  artifactKey: Guid(568fbf8c3d5f5ac4eafa98784f3c0ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/3DModels/Levels/Gras-Level/baum_ohne_blätter.blend using Guid(568fbf8c3d5f5ac4eafa98784f3c0ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dcff2e10db98e551a811c0079b7aaae') in 0.208185 seconds 
+  Import took 0.271697 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 156.261974 seconds.
-  path: Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche/UndergroudnStoneS2.mat
-  artifactKey: Guid(4f8e3ad8a5cb84e428988fc6d09e863a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Graphics/3DModels/Levels/BergLevel/SubAreas/Rutsche/UndergroudnStoneS2.mat using Guid(4f8e3ad8a5cb84e428988fc6d09e863a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1dab4704eb3f7d51a09c51470d4bbe8') in 0.086060 seconds 
-  Import took 0.144778 seconds .
+  Time since last request: 0.000379 seconds.
+  path: Assets/Graphics/3DModels/Levels/Gras-Level/grass-level-OLD.blend
+  artifactKey: Guid(65cf9da73cf05a745b4fb1ed19d380ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/3DModels/Levels/Gras-Level/grass-level-OLD.blend using Guid(65cf9da73cf05a745b4fb1ed19d380ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79f0619a9f2fee3cdc6bd3e3f8afb007') in 0.627497 seconds 
+  Import took 0.667808 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/Graphics/3DModels/Levels/Gras-Level/Gras-Level.blend
+  artifactKey: Guid(df7732fe2bafe8d4a81ddabb1ae25ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/3DModels/Levels/Gras-Level/Gras-Level.blend using Guid(df7732fe2bafe8d4a81ddabb1ae25ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5a987c596d95b06706fad35597adf44') in 0.261586 seconds 
+  Import took 0.306259 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000454 seconds.
+  path: Assets/Graphics/3DModels/Levels/Gras-Level/baum_ohne_blätter.fbx
+  artifactKey: Guid(6aae0454ead266948b785f74530d5fa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/3DModels/Levels/Gras-Level/baum_ohne_blätter.fbx using Guid(6aae0454ead266948b785f74530d5fa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '279d7c55a078a67aac6511649001dcf3') in 0.146378 seconds 
+  Import took 0.185548 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/Graphics/3DModels/Levels/Gras-Level/baum.blend
+  artifactKey: Guid(743ecb5244e16bf4397e33b98f7c41a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/3DModels/Levels/Gras-Level/baum.blend using Guid(743ecb5244e16bf4397e33b98f7c41a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86ffc98ceb701a395b197beae33d0678') in 0.133452 seconds 
+  Import took 0.167640 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Graphics/3DModels/Levels/Gras-Level/Gras-Level8.fbx
+  artifactKey: Guid(87e7abc8308760c47910e575bbb944ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/3DModels/Levels/Gras-Level/Gras-Level8.fbx using Guid(87e7abc8308760c47910e575bbb944ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '730b0547638cb0a9738c2100e946d181') in 0.201294 seconds 
+  Import took 0.262810 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001702 seconds.
+  path: Assets/Graphics/3DModels/Levels/Gras-Level/simplesHaus.blend
+  artifactKey: Guid(adfc422dc33d1d44e9ddb1554dbb7f76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/3DModels/Levels/Gras-Level/simplesHaus.blend using Guid(adfc422dc33d1d44e9ddb1554dbb7f76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0201e5fbea95cb68e0a42b023a5ca1be') in 0.190006 seconds 
+  Import took 0.230754 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000388 seconds.
+  path: Assets/Graphics/3DModels/Levels/Gras-Level/simplesHaus.fbx
+  artifactKey: Guid(92696538e31d5894eb7d2c79c07f7988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/3DModels/Levels/Gras-Level/simplesHaus.fbx using Guid(92696538e31d5894eb7d2c79c07f7988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f16dd0c19c6d8846baef31c23cfbb35d') in 0.097219 seconds 
+  Import took 0.134346 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1080.856001 seconds.
+  path: Assets/Graphics/3DModels/Levels/Gras-Level/Gras-Level.blend
+  artifactKey: Guid(df7732fe2bafe8d4a81ddabb1ae25ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/3DModels/Levels/Gras-Level/Gras-Level.blend using Guid(df7732fe2bafe8d4a81ddabb1ae25ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78a7c14213bc81b9bd7eaabdeff1f9cc') in 0.163019 seconds 
+  Import took 0.212372 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Graphics/3DModels/Levels/Gras-Level/Gras-Level8.fbx
+  artifactKey: Guid(87e7abc8308760c47910e575bbb944ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/3DModels/Levels/Gras-Level/Gras-Level8.fbx using Guid(87e7abc8308760c47910e575bbb944ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd9ec97c9949fa0befba9add8a34319b') in 0.138061 seconds 
+  Import took 0.160755 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 442.661747 seconds.
+  path: Assets/FremdesZeugs/EasyFpsCounter
+  artifactKey: Guid(1581ef71cd9b07c4e93d4cdabef36c59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FremdesZeugs/EasyFpsCounter using Guid(1581ef71cd9b07c4e93d4cdabef36c59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5fb22af48ebd512450ffb89be494b07') in 0.031712 seconds 
+  Import took 0.156859 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.895788 seconds.
+  path: Assets/FremdesZeugs/GrasShader/GrassPainterEditor.cs
+  artifactKey: Guid(d1f0ea6dfcedb9146a012f0479e7e74b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FremdesZeugs/GrasShader/GrassPainterEditor.cs using Guid(d1f0ea6dfcedb9146a012f0479e7e74b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f55a5b25990af4623f2d7ddfd21ed4ab') in 0.027957 seconds 
+  Import took 0.070914 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.144509 seconds.
+  path: Assets/FremdesZeugs/GrasShader/GrassPainterEditor.cs
+  artifactKey: Guid(d1f0ea6dfcedb9146a012f0479e7e74b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FremdesZeugs/GrasShader/GrassPainterEditor.cs using Guid(d1f0ea6dfcedb9146a012f0479e7e74b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45ace4a598359e7f81010529184e846c') in 0.010223 seconds 
+  Import took 0.060194 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.463239 seconds.
+  path: Assets/FremdesZeugs/GrasShader/GeometryGrassPainter.cs
+  artifactKey: Guid(48fc02b90b3744c4d8b59e207ad825f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FremdesZeugs/GrasShader/GeometryGrassPainter.cs using Guid(48fc02b90b3744c4d8b59e207ad825f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6fde292d149187a86028844a211467f') in 0.034668 seconds 
+  Import took 0.075644 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.048755 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.88 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.261 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.87 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4037 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 281.9 MB.
+System memory in use after: 279.6 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 4710.
+Total: 6.742900 ms (FindLiveObjects: 0.486500 ms CreateObjectMapping: 0.293600 ms MarkObjects: 4.512800 ms  DeleteObjects: 1.448100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 116.805862 seconds.
+  path: Assets/FremdesZeugs/GrasShader/Grass2.mat
+  artifactKey: Guid(0560455e3e7c40043a76e9ee81578912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FremdesZeugs/GrasShader/Grass2.mat using Guid(0560455e3e7c40043a76e9ee81578912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8d3492174f6333c1bdd2e6b94569e99') in 1.082943 seconds 
+  Import took 1.100802 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 302.355758 seconds.
+  path: Assets/Settings/Renderer_Renderer.asset
+  artifactKey: Guid(66dc5cf5982131746884915f9c5b9ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/Renderer_Renderer.asset using Guid(66dc5cf5982131746884915f9c5b9ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df2f3257017855d5415601a8136e555f') in 0.112231 seconds 
+  Import took 0.155696 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004987 seconds.
+  path: Assets/Settings/Renderer_Renderer.asset
+  artifactKey: Guid(66dc5cf5982131746884915f9c5b9ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/Renderer_Renderer.asset using Guid(66dc5cf5982131746884915f9c5b9ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df2f3257017855d5415601a8136e555f') in 0.013093 seconds 
+  Import took 0.021122 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 64.825643 seconds.
+  path: Assets/Game/Prefabs/Env/grass.prefab
+  artifactKey: Guid(87c726af700ab0f408a63fd1c83adab2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Prefabs/Env/grass.prefab using Guid(87c726af700ab0f408a63fd1c83adab2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7583592d06783f95ed345c91b107547a') in 0.040508 seconds 
+  Import took 0.059556 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.590604 seconds.
+  path: Assets/Game/Scenes/GrasLevel/Gras Level.unity
+  artifactKey: Guid(22212e897786b4f4abebc29039e86302) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/GrasLevel/Gras Level.unity using Guid(22212e897786b4f4abebc29039e86302) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3194280cc8fc22ec1c6806c40a5103c4') in 0.015784 seconds 
+  Import took 0.083178 seconds .
 

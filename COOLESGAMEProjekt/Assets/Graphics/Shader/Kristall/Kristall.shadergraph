@@ -803,7 +803,7 @@
     "m_ActiveSubTarget": {
         "m_Id": "fe934d21eea24e5db940f0cbd6ca8ffd"
     },
-    "m_SurfaceType": 1,
+    "m_SurfaceType": 0,
     "m_AlphaMode": 0,
     "m_TwoSided": false,
     "m_AlphaClip": false,
@@ -1288,8 +1288,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -353.9999694824219,
-            "y": 338.0,
+            "x": -375.0,
+            "y": 304.0,
             "width": 208.00001525878907,
             "height": 302.0
         }

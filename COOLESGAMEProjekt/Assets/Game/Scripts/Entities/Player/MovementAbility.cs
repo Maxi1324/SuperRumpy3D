@@ -38,5 +38,15 @@ namespace Entity.Player.Abilities
         /// <param name="allowedMoves"></param>
         /// <returns></returns>
         public abstract bool Allowed(int allowedMoves);
+
+        public virtual void HelperFunction()
+        {
+
+        }
+
+        public virtual void HelperFunction2()
+        {
+
+        }
     }
 }

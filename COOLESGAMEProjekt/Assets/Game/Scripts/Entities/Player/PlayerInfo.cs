@@ -15,6 +15,7 @@ namespace Entity.Player
         public string A = "Fire1";
         public string B = "Fire2";
         public string C = "Fire3";
+        public string Bumper = "Bumper";
 
         public float Beschleunigung = 40000;
         public float WalkSpeed = 30;

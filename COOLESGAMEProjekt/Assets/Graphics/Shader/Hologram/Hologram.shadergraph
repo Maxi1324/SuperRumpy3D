@@ -993,7 +993,7 @@
         "m_Id": "e4f2213878184b86b93bed3a93f614b9"
     },
     "m_SurfaceType": 1,
-    "m_AlphaMode": 0,
+    "m_AlphaMode": 1,
     "m_TwoSided": false,
     "m_AlphaClip": false,
     "m_CustomEditorGUI": ""

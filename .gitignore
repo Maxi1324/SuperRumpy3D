@@ -37,3 +37,4 @@ sysinfo.txt
 *.unitypackage
 *.log
 COOLESGAMEProjekt/Assets/Game/Scenes/BergLevel/BergLevel/OcclusionCullingData.asset
+*.log

@@ -23,7 +23,7 @@ namespace Entity.Player.Abilities
         {
             if(PM.AllowedMoves ==5)
             {
-                PM.SPMovement.SimpleMovement(PM.XAxis, PM.YAxis, false, 0.3f);
+                PM.SPMovement.SimpleMovement(PM.XAxis, PM.YAxis, false, .8f);
             }  
         }
 

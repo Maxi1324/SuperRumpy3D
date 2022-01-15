@@ -1,6 +1,5 @@
 using UnityEditor;
 
-#if Unity_Editor
 using UnityEditorInternal;
 using UnityEngine;
     
@@ -81,4 +80,3 @@ public class GrassPainterEditor : Editor
         }
     }
 }
-#endif

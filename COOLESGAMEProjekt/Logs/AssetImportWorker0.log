@@ -1,52 +1,195 @@
 Using pre-set license
-Built from '2020.3/release' branch; Version is '2020.3.12f1 (b3b2c6512326) revision 11776710'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19043.1415; Version 2009; 64bit' Language: 'de' Physical Memory: 8136 MB
+Built from '2020.3/staging' branch; Version is '2020.3.19f1 (68f137dc9bbe) revision 6877495'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 22000.376; Version 2009; 64bit' Language: 'de' Physical Memory: 8059 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
- COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2020.3.12f1\Editor\Unity.exe
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.19f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-F:/0000Schule/20210919_SUNDAY_PRE/PREProjekt/COOLESGAME/COOLESGAMEProjekt
+C:/Users/marko/Documents/COOLESGAME/COOLESGAMEProjekt
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51731
-Successfully changed project path to: F:/0000Schule/20210919_SUNDAY_PRE/PREProjekt/COOLESGAME/COOLESGAMEProjekt
-F:/0000Schule/20210919_SUNDAY_PRE/PREProjekt/COOLESGAME/COOLESGAMEProjekt
+63321
+Successfully changed project path to: C:/Users/marko/Documents/COOLESGAME/COOLESGAMEProjekt
+C:/Users/marko/Documents/COOLESGAME/COOLESGAMEProjekt
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 171.49 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 110.21 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 2020.3.12f1 (b3b2c6512326)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path F:/0000Schule/20210919_SUNDAY_PRE/PREProjekt/COOLESGAME/COOLESGAMEProjekt/Assets
+Initialize engine version: 2020.3.19f1 (68f137dc9bbe)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.19f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/marko/Documents/COOLESGAME/COOLESGAMEProjekt/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
+    Renderer: Intel(R) UHD Graphics 620 (ID=0x5917)
     Vendor:   
-    VRAM:     6052 MB
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+    VRAM:     4029 MB
+    Driver:   25.20.100.6577
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56072
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.19f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.19f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.19f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56592
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003210 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003113 seconds.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 123.51 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 101.73 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.263 seconds
+- Completed reload, in  1.652 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1653ms)
+		BeginReloadAssembly (79ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (563ms)
+			LoadAssemblies (76ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (182ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (40ms)
+			SetupLoadedEditorAssemblies (252ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (102ms)
+				BeforeProcessingInitializeOnLoad (20ms)
+				ProcessInitializeOnLoadAttributes (90ms)
+				ProcessInitializeOnLoadMethodAttributes (34ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.044246 seconds.
+Registered in 0.008714 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 120.45 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.544 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2546ms)
+		BeginReloadAssembly (248ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (25ms)
+		EndReloadAssembly (2207ms)
+			LoadAssemblies (218ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (501ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (139ms)
+			SetupLoadedEditorAssemblies (1212ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (121ms)
+				BeforeProcessingInitializeOnLoad (135ms)
+				ProcessInitializeOnLoadAttributes (936ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.84 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4199 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 188.6 MB.
+System memory in use after: 188.8 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4638.
+Total: 4.697800 ms (FindLiveObjects: 0.505200 ms CreateObjectMapping: 0.284000 ms MarkObjects: 3.764000 ms  DeleteObjects: 0.143200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Game/Scenes/BergLevel/BergLevel/NavMesh.asset
+  artifactKey: Guid(ae3a494d850befd44b6f36fb8d18e47b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/BergLevel/BergLevel/NavMesh.asset using Guid(ae3a494d850befd44b6f36fb8d18e47b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '525e3a520320fdd666cc770b40ca5ac4') in 0.118056 seconds 
+  Import took 0.131238 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/Game/Scenes/BergLevel/BergLevel/LightingData.asset
+  artifactKey: Guid(0d568939750848e4da03c8d2f3c833e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/BergLevel/BergLevel/LightingData.asset using Guid(0d568939750848e4da03c8d2f3c833e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65c41a590ee0f0b44dd75b78f0ce5cdf') in 0.015970 seconds 
+  Import took 0.026604 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Game/Scenes/BergLevel/BergLevel/ReflectionProbe-15.exr
+  artifactKey: Guid(d720e33185ecb774b966cae935ebf8a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/BergLevel/BergLevel/ReflectionProbe-15.exr using Guid(d720e33185ecb774b966cae935ebf8a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fce17ae978955d06a43eb1a7411d8ab') in 0.151947 seconds 
+  Import took 0.160088 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.665783 seconds.
+  path: Assets/Game/Scenes/BergLevel/BergLevel.unity
+  artifactKey: Guid(0ee661193b3f81d42bbf7055529b8dff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/BergLevel/BergLevel.unity using Guid(0ee661193b3f81d42bbf7055529b8dff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '427bc7696722de8ce747bd6eb189533b') in 2.640311 seconds 
+  Import took 3.140542 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 55.775518 seconds.
+  path: Assets/Game/Scenes/HoelenLevel/Holz.mat
+  artifactKey: Guid(b07a63af23932f64c9e416cee71b331a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/HoelenLevel/Holz.mat using Guid(b07a63af23932f64c9e416cee71b331a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b98cd86cb30db249d07576468a6a80a') in 0.663520 seconds 
+  Import took 0.686121 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000406 seconds.
+  path: Assets/Game/Scenes/HoelenLevel/Stone.mat
+  artifactKey: Guid(810b45fa85f092e42996ff969526f0f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/HoelenLevel/Stone.mat using Guid(810b45fa85f092e42996ff969526f0f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c5ab07b3dba11161feb5d540b3b8943') in 0.079664 seconds 
+  Import took 0.094597 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.369192 seconds.
+  path: Assets/Game/Scenes/TestLevel/f.mat
+  artifactKey: Guid(3d43bedc3d559254eaeafacaec71938e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/TestLevel/f.mat using Guid(3d43bedc3d559254eaeafacaec71938e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40a287a9bdbe1f5eb0051b09972b6d94') in 0.068485 seconds 
+  Import took 0.089042 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.094056 seconds.
+  path: Assets/Game/Scenes/TestLevel/TestLevel.unity
+  artifactKey: Guid(9b3507a5eed83f74080b8b2c01f554ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/TestLevel/TestLevel.unity using Guid(9b3507a5eed83f74080b8b2c01f554ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fff5e1b1c9c114704e8bd3455f3d865') in 0.005481 seconds 
+  Import took 0.017595 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -181,18 +181,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "- Developed by DIE COOLEN -\n\n- Project Lead -\nFischer Maximilian\n\n-
-    Game Designers -\n\n\n\n\n\n\n- Programmers -\n\n\n\n- Sound Designers - \n\n\n\n\n-
-    Graphic Designer -\nFischer Maximilian\n\n- Player | Enemy | Physics -\nFischer
-    Maxmilian \n\n- User Interface Designers -\n\n\n\n\n- Player Controlls | Abilities 
-    -\nFischer Maximilian\n\n- Player Designer - \nFischer Maximilian\nFidanci Mirac\n\n-
-    Third Party Assets -\n3D Noise: https://github.com/JimmyCushnie/Noisy-Nodes\r\nGrasShader
+    Game Designers -\n\n\n\n\n\n\n- Programmers -\nFischer Maximilian\n\n- Sound
+    Designers - \n\n\n\n\n- Graphic Designer -\nFischer Maximilian\n\n- Player |
+    Enemy | Physics -\nFischer Maxmilian \n\n- User Interface Designers -\n\n\n\n\n-
+    Player Controlls | Abilities  -\nFischer Maximilian\n\n- Player Designer - \nFischer
+    Maximilian\nGlavan Marco-Robert\n\n- Third Party Assets -\n3D Noise: https://github.com/JimmyCushnie/Noisy-Nodes\r\nGrasShader
     + Tool: Minios Art https://www.patreon.com/posts/grass-geometry-2-40077798\r\nExample
     Partikel Effects: Unity \r\nOpenNat: https://www.nuget.org/packages/Open.Nat/2.1.0\r\nBeautiful
     Progress Bar Free Loadingbars: https://assetstore.unity.com/packages/2d/gui/icons/beautiful-progress-bar-free-194904\r\nClean
     Vector Icons:https://assetstore.unity.com/packages/2d/gui/icons/clean-vector-icons-132084\r\nEasyFPSCounter:
-    https://assetstore.unity.com/packages/tools/integration/easy-fps-counter-130203\n\n-
-    Special Thanks -\nGlavan Marco-Robert for creating the credits\nAnd thank you
-    all for playing our game\nSincerly \nDIE COOLEN"
+    https://assetstore.unity.com/packages/tools/integration/easy-fps-counter-130203\nNose
+    Female Kid: https://free3d.com/3d-model/nose-v1--641848.html\nHair Female Kid:
+    https://free3d.com/3d-model/stylized-shorthair-with-a-bow-468824.html\nLips Female
+    Kid: https://free3d.com/3d-model/lips-v1--931039.html\n\n- Special Thanks -\nTo
+    our class 3BHIF\nAnd thank you all for playing our game\nSincerly \nDIE COOLEN"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 97020f01cff9a8f4eb7086a16c5a4f66, type: 2}
   m_sharedMaterial: {fileID: 2897173414622584230, guid: 97020f01cff9a8f4eb7086a16c5a4f66, type: 2}
@@ -457,9 +459,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Limani Lindor\nFidanci Mirac\nGavranic Marko\nFischer Maximilian\nGlavan
-    Marco-Robert\n\n\nFischer Maximilian\nGlavan Marco-Robert\n\n\nGlavan Marco-Robert\nFischer
-    Maximilian\nFidanci Mirac\n\n\n\n\n\n\n\n\nFischer Maximilian\nLimani Lindor
-    \nGlavan Marco-Robert"
+    Marco-Robert\n\n\n\n\n\nFidanci Mirac\nFischer Maximilian\n\n\n\n\n\n\n\n\n\nFischer
+    Maximilian\nLimani Lindor \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 97020f01cff9a8f4eb7086a16c5a4f66, type: 2}
   m_sharedMaterial: {fileID: 2897173414622584230, guid: 97020f01cff9a8f4eb7086a16c5a4f66, type: 2}
@@ -814,14 +815,11 @@ MonoBehaviour:
 
 
 
+
+
+
     Lead
-    Programmer
-
-    Programmer
-
-
-
-    Lead Sound Designer
+    Sound Designer
 
     Sound Designers
 
@@ -834,8 +832,7 @@ MonoBehaviour:
 
 
 
-    Lead
-    UI Designer
+    Lead UI Designer
 
     UI Designers '
   m_isRightToLeft: 0

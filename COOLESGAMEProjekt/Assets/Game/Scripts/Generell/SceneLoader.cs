@@ -30,6 +30,7 @@ namespace Generell
             {
                 SceneLoad = 10;
                 TransitionAnimator.SetBool("TransitionBack", true);
+
             };
         }
 
@@ -51,12 +52,12 @@ namespace Generell
             TransitionAnimator.SetBool("TransitionBack", false);
         }
 
-        public static void loadScene(string Scene, Action AfterSceneLoad)
+        public static void loadScene(string Scene, Action AfterSceneLoad, bool waitforAnimation = true)
         {
             Instance.AfterLoaded = AfterSceneLoad;
             if (Instance.operation == null || Instance.operation.progress > 0.8f)
             {
-                Instance.SC(Scene);
+                Instance.SC(Scene, waitforAnimation);
             }
         }
 
@@ -84,19 +85,21 @@ namespace Generell
             Hallo();
         }
 
-        private void SC (string scene)
+        private void SC (string scene, bool WatiAnim)
         {
-            StartCoroutine("WaitForLoading",scene);
+            StartCoroutine(WaitForLoading(scene, WatiAnim));
         }
 
-        IEnumerator WaitForLoading(string Scene)
+
+
+        IEnumerator WaitForLoading(string Scene, bool WaitAnim)
         {
             Instance.canvas.enabled = true;
             Instance.TransitionAnimator.SetBool("TransitionTo", true);
             LoadingUeberOb.SetActive(true);
             yield return new WaitForSeconds(1);
             operation = SceneManager.LoadSceneAsync(Scene);
-            operation.allowSceneActivation = false;
+            operation.allowSceneActivation = !WaitAnim;
             while (!(operation.progress > 0.8))
             {
                 LoadingUeberOb.SetActive(true);
@@ -112,6 +115,7 @@ namespace Generell
             {
                 LoadingUeberOb.SetActive(false);
                 operation.allowSceneActivation = true;
+                Debug.Log("active");
             }
         }
     }

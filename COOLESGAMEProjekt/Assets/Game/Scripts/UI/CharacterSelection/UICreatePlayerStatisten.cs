@@ -31,7 +31,7 @@ namespace UI.CharacterSelection
 
                 GameObject CamOb = new GameObject("CameraOB");
                 CamOb.transform.parent = Ob.transform;
-                CamOb.transform.position = CamOffset;
+                CamOb.transform.position = CamOffset + Ob.transform.position;
                 CamOb.AddComponent(typeof(UnityEngine.Camera));
                 CamOb.transform.rotation = Quaternion.Euler(0, 180, 0);
                 var Cam = CamOb.GetComponent<UnityEngine.Camera>();

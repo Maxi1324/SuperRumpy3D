@@ -66,14 +66,11 @@ public class InGameUiFunktions : MonoBehaviour
                 if (Input.GetButtonDown("Fire3"+ (i == 0?"":i+"")))
                 {
                     Vector3 oldScale = Dialog.transform.localScale;
-                    StartCoroutine(ScaleUD(false, oldScale, () =>
-                    {
-                        Time.timeScale = 1;
-                        isShowing = false;
-                        D.SetActive(false);
-                        DialogText.text = "";
-                        OnFertig();
-                    },Dialog,0));
+                    Time.timeScale = 1;
+                    isShowing = false;
+                    D.SetActive(false);
+                    DialogText.text = "";
+                    OnFertig();
                     run = false;
                     yield break;
                 }

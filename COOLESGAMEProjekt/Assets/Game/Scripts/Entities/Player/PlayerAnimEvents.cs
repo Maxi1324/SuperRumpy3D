@@ -49,8 +49,17 @@ namespace Entity.Player.Extras
 
         IEnumerator disJump()
         {
-            yield return new WaitForSeconds(1);
-            PM.PInfo.Anim.SetBool("isJumping", false);
+            for (int i = 0; i < 100;i++) {
+                yield return new WaitForSeconds(.01f);
+                PM.PInfo.Anim.SetBool("isJumping", false);
+            }
+        }
+
+        public void doHighJump2()
+        {
+            MovementAbility MA = PM.Moves.Find(h => h is HighJump);
+            MA.HelperFunction2();
+            Debug.Log("HighJump2");
         }
     }
 }

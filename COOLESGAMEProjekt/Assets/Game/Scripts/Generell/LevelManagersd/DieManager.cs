@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UI.CharacterSelection;
 using UnityEngine;
 
 namespace Generell.LevelManager1
@@ -11,7 +12,7 @@ namespace Generell.LevelManager1
         private List<PlayerManager> Dead { get; set; } = new List<PlayerManager>();
         private LevelManager Manager { get; set; }
 
-        private bool informed = false;
+        public bool informed = false;
 
         private void Start()
         {
@@ -45,18 +46,14 @@ namespace Generell.LevelManager1
                 }
             }
 
-            if (Dead.Count == Players.Length)
-            {
+            if (Dead.Count == CharacterSelectionManager.Players.Count)
+            {  
                 if (!informed)
                 {
                     informed = true;
                     Manager.InitLevel();
                     Dead.Clear();
                 }
-            }
-            else
-            {
-                informed = false;
             }
         }
 

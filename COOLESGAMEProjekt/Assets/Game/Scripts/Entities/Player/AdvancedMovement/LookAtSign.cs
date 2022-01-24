@@ -11,6 +11,7 @@ namespace Entity.Player.Abilities
         public float maxDis = 15;
         public PlayerManager PM;
 
+        private bool hallo;
         private GameObject Tooltip;
 
         private void Reset()
@@ -35,18 +36,20 @@ namespace Entity.Player.Abilities
                 {
                     if (distance < maxDis)
                     {
-                        if (Tooltip == null)
+                        if (Tooltip == null&&!hallo)
                         {
                             Tooltip = WorldSpaceUiFunctions.Instance.ShowTooltip(UI.InGameUi.Tooltip.A, PM.PInfo.PHandTransform.position);
                             StartCoroutine(WorldSpaceUiFunctions.Instance.FollowTransform(PM.PInfo.PHandTransform, Tooltip.transform));
+                            hallo = true;
                         }
                         if (PM.Fire3Pressed)
                         {
                             Schild schild = ob.GetComponent<Schild>();
-                            PM.AllowedMoves = -1;
+                            PM.AllowedMoves = -1;   
                             schild.show(() =>
                             {
                                 PM.AllowedMoves = 0;
+                                hallo = true;
                             });
                             return true;
                         }

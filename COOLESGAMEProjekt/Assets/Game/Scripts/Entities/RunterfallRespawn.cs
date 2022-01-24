@@ -51,6 +51,12 @@ namespace Entity
                 }
                 BacktoSafePosition();
             }
+            if(collision.transform.tag == "lava")
+            {
+                //Ent.DamageHandler.Hit(Vector3.zero, Vector3.zero, false, mult);
+                //Ent.DamageHandler.Hit(Vector3.zero, Vector3.zero, false, mult);
+                Ent.DamageHandler.Die();
+            }
         }
 
         IEnumerator FindPos()
@@ -61,10 +67,10 @@ namespace Entity
                 Ray ray = new Ray(transform.position, Vector3.down);
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, Mask) )
                 {
-                    if (hit.normal.y > 0.9 && hit.transform.gameObject.layer == 7 && hit.transform.gameObject.isStatic && hit.transform.tag != "Kill")
+                    if (hit.normal.y > 0.9 &&  hit.transform.tag == "Map")
                     {
-                        lastSafePosition = transform.position;
-                        yield return new WaitForSeconds(2);
+                        //lastSafePosition = transform.position;
+                        yield return null;
                     }
                 }
                 yield return null;

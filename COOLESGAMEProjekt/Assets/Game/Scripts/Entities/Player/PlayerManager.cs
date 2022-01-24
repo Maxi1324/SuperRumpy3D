@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UI;
 
 namespace Entity.Player
 {
@@ -60,6 +61,32 @@ namespace Entity.Player
         {
             StartScale = transform.localScale;
             aktLeben = Startleben;
+
+            GameObject ob = PInfo.PlayerSkins[(int)PInfo.Skin];
+            ob.SetActive(true);
+            Skin skin = ob.GetComponent<Skin>();
+            PInfo.Anim = skin.Anim;
+
+            for (int i = 0; i < 3; i++) {
+                if (PlayerPrefs.GetInt(("Ab" + i)) == 0)
+                {
+                    MovementAbility Ab = null;
+                    switch (i)
+                    {
+                        case 0:
+                            Ab = GetComponent<GrapplingHook>();
+                        break;
+                        case 1:
+                            Ab = GetComponent<LongJump>();
+                            break;
+                        case 2:
+                            Ab = GetComponent<HighJump>();
+                            break;
+                    }
+                    Moves.Remove(Ab);
+                    Ab.enabled = false;
+                }
+            }
         }
 
         private void Reset()
@@ -108,7 +135,7 @@ namespace Entity.Player
             {
                 abnahme = 0.94f;
             }
-            if(AllowedMoves != 5)PInfo.Rb.velocity = new Vector3(PInfo.Rb.velocity.x * abnahme, (y < 0f && y > -100) ? y * 1.03f : y, PInfo.Rb.velocity.z * abnahme);
+            if(AllowedMoves != 5 && AllowedMoves != 2)PInfo.Rb.velocity = new Vector3(PInfo.Rb.velocity.x * abnahme, (y < 0f && y > -100) ? y * 1.03f : y, PInfo.Rb.velocity.z * abnahme);
             FrameAnim();
 
             InteractPlayer[] InteractPlayersA = FindObjectsOfType<InteractPlayer>();
@@ -133,7 +160,7 @@ namespace Entity.Player
                 }
             });
 
-            if (Jump && AllowedMoves == 0 && OnGround) SPMovement.InitJump();
+            if (JumpPressed && AllowedMoves == 0 && OnGround) SPMovement.InitJump();
             if (AllowedMoves == 0) SPMovement.SimpleMovement(XAxis, YAxis, Run, 1);
             if (AllowedMoves == 1) SPMovement.SimpleMovement(XAxis, YAxis, Run, PInfo.SpeedMultInAir);
             // MaxSpeed();

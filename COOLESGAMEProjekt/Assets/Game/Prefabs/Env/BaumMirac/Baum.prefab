@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7115663373748307803}
   - component: {fileID: 1200715271711219555}
   - component: {fileID: 7816353354918976728}
-  - component: {fileID: 8605408581386929589}
+  - component: {fileID: 7687449033753163561}
   m_Layer: 0
   m_Name: Icosphere
   m_TagString: Untagged
@@ -82,20 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8605408581386929589
-MeshCollider:
+--- !u!65 &7687449033753163561
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635720130011283656}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 65cc9236eeaa83246af1351c461e80c6, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 289301614986012343, guid: 1abca7354c8166f47b8566f29b3f412a, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 4.799709, y: 4.9690237, z: 3.681308}
+  m_Center: {x: 0.24167828, y: -6.398765, z: -0.96008706}
 --- !u!1 &3339511557256698064
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +106,7 @@ GameObject:
   - component: {fileID: 8378940902784983454}
   - component: {fileID: 8324506117359655837}
   - component: {fileID: 2464773790375110512}
-  - component: {fileID: 7975486116759622958}
+  - component: {fileID: 86104447943480832}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -178,20 +177,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7975486116759622958
-MeshCollider:
+--- !u!65 &86104447943480832
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3339511557256698064}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 65cc9236eeaa83246af1351c461e80c6, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -462981019419857548, guid: 1abca7354c8166f47b8566f29b3f412a, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 7.827958}
+  m_Center: {x: -0.99, y: -1.1505837, z: 3.9445062}
 --- !u!1 &4389223073658484987
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ namespace Obstacles.Schild
         {
             if (eins) return;
             eins = true;
-            InGameUiFunktions.Instance.ShowText(text,Fertig);
+            //InGameUiFunktions.Instance.ShowText(text,Fertig);
         }
     }
 }

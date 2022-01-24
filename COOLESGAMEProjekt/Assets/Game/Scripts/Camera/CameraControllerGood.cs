@@ -46,10 +46,9 @@ namespace Camera
         private void FixedUpdate()
         {
             DoOffset();
-            UpdatePlayers();
         }
 
-        private void FindPlayers()
+        public void FindPlayers()
         {
             PlayerManager[] Players = FindObjectsOfType<PlayerManager>();
             foreach (PlayerManager Player in Players)

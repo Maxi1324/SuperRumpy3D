@@ -15,37 +15,33 @@ namespace Entity.Player.Abilities
         public float AnimHeight = 2;
         public int AnimQuality = 5;
 
+        public Transform Hips;
+
         private Transform hookPoint;
         private float AnimTimer = 0;
 
-        private bool lastWasOk = false;
+        private float lastDis;
 
         private void Reset()
         {
             PManager = GetComponent<PlayerManager>();
         }
 
-
         public override bool Active(float distance, InteractPlayer ob, bool allowed)
         {
             if (hookRadius > distance)
             {
-                CameraController.CController.AddToFollowList(ob.transform, 50f);
                 if (allowed)
                 {
-                    lastWasOk = true;
                     if (ob.key == "GrapplingPoint" && hookPoint == null && PManager.Fire3)
                     {
                         hookPoint = ob.transform;
                         Debug.Log("hook");
                         PManager.AllowedMoves = 2;
+                        lastDis = distance;
                         return true;
                     }
                 }
-            }
-            if (lastWasOk && !(hookRadius > distance))
-            {
-                CameraController.CController.RemoveFromFollowing(ob.transform);
             }
             return false;
         }
@@ -65,10 +61,13 @@ namespace Entity.Player.Abilities
             joint.spring = 1.25f;
         }
 
-        private void Update()
+        private void LateUpdate()
         {
-            if (PManager.AllowedMoves == 2 && hookPoint != null)
+            if (hookPoint != null)
             {
+                PManager.AllowedMoves = 2;
+
+
                 LineRenderer renderer = PManager.PInfo.LineRenderer;
                 AnimTimer += Time.deltaTime;
 
@@ -108,11 +107,24 @@ namespace Entity.Player.Abilities
                     renderer.SetPosition(1, hookPoint.transform.position);
                     renderer.SetPosition(0, transform.position);
 
+
+                    Hips.LookAt(hookPoint);
+
                     SpringJoint joint = GetComponent<SpringJoint>();
                     if (joint.massScale == .000000001f)
                     {
                         joint.connectedBody = hookPoint.GetComponent<Rigidbody>();
-                        joint.massScale = 1;
+                        joint.connectedAnchor =Vector3.zero;
+                        joint.spring = 1.5f;
+                        joint.damper =1.5f;
+                        joint.massScale = 4.5f;
+                        joint.maxDistance = lastDis * 0.8f;
+                        joint.minDistance = lastDis * 0.2f;
+                        joint.massScale = 10f;
+                        joint.connectedMassScale = 4.5f;
+                        PManager.PInfo.Anim.SetBool("isSwinging", true);
+                       PManager.PInfo.Rb.AddForce(transform.forward * 500 );
+                        PManager.PInfo.Rb.AddForce(-transform.up * 500 );
                     }
                 }
             }
@@ -126,6 +138,7 @@ namespace Entity.Player.Abilities
                 {
                     joint.massScale = .000000001f;
                     joint.connectedBody = null;
+                    PManager.PInfo.Anim.SetBool("isSwinging", false);
                 }
             }
             if ((hookPoint != null && !PManager.Fire3) || PManager.OnGround)
@@ -140,7 +153,7 @@ namespace Entity.Player.Abilities
 
         public override bool Allowed(int allowedMoves)
         {
-            return allowedMoves == 1 || (allowedMoves == 0 && !PManager.OnGround);
+            return !PManager.OnGround;
         }
     }
 }

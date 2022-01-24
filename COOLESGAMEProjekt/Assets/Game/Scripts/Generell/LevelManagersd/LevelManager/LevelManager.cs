@@ -5,6 +5,8 @@ using System.Linq;
 using UI;
 using Entity.Player;
 using System.Collections;
+using UI.CharacterSelection;
+using Camera;
 
 namespace Generell.LevelManager1
 {
@@ -19,19 +21,63 @@ namespace Generell.LevelManager1
         public List<UIPlayerInfo> UIPlayerInfo { get; set; } = new List<UIPlayerInfo>();
 
         public int Coins;
-        public int Timer;
+        public static int Timer;
 
         private bool inited = false;
 
-        private void Start()
+        GameObject StartC;
+        GameObject EndC;
+
+        private Vector3 startOff;
+
+        public bool InCutScene { get; private set; }
+
+        protected void Start()
         {
-            UIPlayerInfo.Add(new UIPlayerInfo() { ControllerNum = 0, PlayerNum = 1, Skin = PlayerSkin.MoneyBoy, PlayerName = "Der Coole" });
+            startOff = CameraControllerGood.Instance.Offset;
+            StartC = GameObject.Find("StartC");
+            EndC = GameObject.Find("EndC");
+
+            if (EndC != null)
+            {
+                EndC.SetActive(false);
+            }
+            if (StartC != null)
+            {
+                InCutScene = true;
+            }
+            else
+            {
+                StartEvent();
+            }
+        }
+
+        public void TriggerEndCutScene()
+        {
+            InCutScene = true;
+            EndC.SetActive(true);
+            PlayerManager[] PM = FindObjectsOfType<PlayerManager>();
+            for (int i = 0; i < PM.Length; i++)
+            {
+                Destroy(PM[i].gameObject);
+            }
+        }
+
+        public void StartEvent()
+        {
+            if (StartC != null)
+            {
+                StartC.SetActive(false);
+            }
+            InCutScene = false;
+            UIPlayerInfo = CharacterSelectionManager.Players;
             StartCoroutine(TimerSR());
             InitLevel();
         }
 
         public void InitLevel()
         {
+            if (InCutScene) return;
             if (inited)
             {
                 SceneLoader.Transition(false, () =>
@@ -46,6 +92,8 @@ namespace Generell.LevelManager1
                 Spawn();
                 inited = true;
             }
+            CameraControllerGood.Instance.Offset =startOff;
+            CameraControllerGood.Instance.UpdatePlayers();
         }
 
         private void Spawn()
@@ -53,12 +101,23 @@ namespace Generell.LevelManager1
             System.Random rnd = new System.Random();
             SpawnPoints.OrderBy((item) => rnd.Next());
 
+            PlayerManager[] PM = FindObjectsOfType<PlayerManager>();
+            for (int j = 0; j < PM.Length; j++)
+            {
+                Destroy(PM[j].gameObject);
+            }
+
+            DieManager Man = FindObjectOfType<DieManager>();
+            Man.informed = false;
+
             int i = 0;
             UIPlayerInfo.ForEach((UIPlayerInfo PlayerInfo) =>
             {
                 SpawnPlayer(PlayerInfo, SpawnPoints[i]);
                 i++;
             });
+            CameraControllerGood cont = FindObjectOfType<CameraControllerGood>();
+            cont.FindPlayers();
         }
 
         private void SpawnPlayer(UIPlayerInfo PlayerInfo, Transform SpawnPoint)
@@ -68,7 +127,7 @@ namespace Generell.LevelManager1
             PlayerInfo Info = PlayerManager.PInfo;
             Info.ControllerNum = PlayerInfo.ControllerNum;
             Info.PlayerNum = PlayerInfo.PlayerNum;
-            PlayerInfo.Skin = Info.Skin;
+            Info.Skin = PlayerInfo.Skin;
             Info.Camera = cam;
         }
 

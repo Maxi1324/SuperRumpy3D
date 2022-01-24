@@ -14,6 +14,9 @@ namespace UI
         public PlayerSkin Skin { get; set; }
         public int ControllerNum { get; set; }
         public long RegisZeit { get; private set; }
+        public bool Editable { get; set; } = true;
+
+        public bool WasUpStick { get; set; }
 
         public UIPlayerInfo()
         {
@@ -38,7 +41,7 @@ namespace UI
     {
         Rumpy,
         Rumpina,
-        MoneyBoy,
-        YourMom
+        Joe,
+        Mama
     }
 }

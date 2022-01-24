@@ -36,6 +36,7 @@ namespace Entity.Player
         public Collider Collider;
         public GameObject DieParikel;
         public Transform PHandTransform;
+        public List<GameObject> PlayerSkins;
 
         public float MaxSpeed = 100;
 

@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8830d03b49212d40b7352972982bc3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
+  key: Schild
 --- !u!65 &6141033607885829811
 BoxCollider:
   m_ObjectHideFlags: 0

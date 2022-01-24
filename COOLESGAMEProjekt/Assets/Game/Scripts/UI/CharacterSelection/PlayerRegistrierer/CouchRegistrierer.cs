@@ -9,7 +9,7 @@ namespace UI.CharacterSelection.CharacterRegistrierer
 {
     class CouchRegistrierer : MonoBehaviour, ICharacterRegistrierer
     {
-        public string Button = "Fire2";
+        public string Button = "Jump";
         private List<int> Players = new List<int>();
 
         public List<UIPlayerInfo> FindNewPlayers()
@@ -21,7 +21,7 @@ namespace UI.CharacterSelection.CharacterRegistrierer
                 {
                     if (Input.GetButtonDown(Button + (i+1)))
                     {
-                        UIPlayerInfo Info = new UIPlayerInfo() {ControllerNum = (i+1), PlayerName = "Player"+Players.Count,PlayerNum = Players.Count, Skin = (PlayerSkin)Players.Count};
+                        UIPlayerInfo Info = new UIPlayerInfo() {ControllerNum = (i+1), PlayerName = "Player"+Players.Count,PlayerNum = Players.Count, Skin = (PlayerSkin)3 };
                         Players.Add(i);
                         PlayerInfos.Add(Info);
                     }

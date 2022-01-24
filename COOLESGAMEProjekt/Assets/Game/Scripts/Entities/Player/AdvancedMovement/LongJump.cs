@@ -9,6 +9,7 @@ namespace Entity.Player.Abilities
     {
         public PlayerManager PM;
         public Vector3 Dir;
+        public bool isLongJumping;
         private void Reset()
         {
             PM = GetComponent<PlayerManager>();
@@ -21,8 +22,9 @@ namespace Entity.Player.Abilities
 
         private void Update()
         {
-            if(PM.AllowedMoves ==5)
+            if(isLongJumping)
             {
+                PM.AllowedMoves = 5;
                 PM.SPMovement.SimpleMovement(PM.XAxis, PM.YAxis, false, .8f);
             }  
         }
@@ -34,6 +36,8 @@ namespace Entity.Player.Abilities
 
                 PM.AllowedMoves = -1;
                 PM.PInfo.Anim.SetBool("StartLongJump", true);
+                PM.PInfo.Anim.Play("StartLongJump");
+                isLongJumping = true;
                 return true;
             }
             return false;
@@ -41,7 +45,7 @@ namespace Entity.Player.Abilities
 
         public override bool Allowed(int allowedMoves)
         {
-            return allowedMoves == 0 && PM.Run;
+            return allowedMoves == 0 && PM.Run && PM.OnGround;
         }
 
         public override void HelperFunction()
@@ -51,12 +55,24 @@ namespace Entity.Player.Abilities
             PM.AllowedMoves = 5;
            // PM.PInfo.Anim.SetBool("StartLongJump", false);
             PM.PInfo.Anim.SetBool("IsJumping", false);
+            StartCoroutine(MaxTime());
         }
 
         public override void HelperFunction2()
         {
             PM.AllowedMoves = 0;
             PM.PInfo.Anim.SetBool("StartLongJump", false);
+            isLongJumping = false;
+        }
+
+        IEnumerator MaxTime()
+        {
+            yield return new WaitForSeconds(4);
+            if (PM.PInfo.Anim.GetBool("StartLongJump"))
+            {
+                HelperFunction2();
+                PM.AllowedMoves = 1;
+            }
         }
     }
 }

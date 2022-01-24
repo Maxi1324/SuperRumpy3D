@@ -12,7 +12,7 @@ namespace UI.CharacterSelection
         public RawImage PlayerRender;
 
         public UIPlayerInfo Player;
-        private PlayerSkin? skin;
+        private PlayerSkin? skin = null;
 
         public void Update()
         {
@@ -22,6 +22,7 @@ namespace UI.CharacterSelection
                 skin = Player.Skin;
                 PlayerRender.texture = UICreatePlayerStatisten.Instance.RenderTextures[(int)Player.Skin];
                 TopDeckel.gameObject.SetActive(false);
+                Debug.Log(Player.Skin);
             }    
         }
 

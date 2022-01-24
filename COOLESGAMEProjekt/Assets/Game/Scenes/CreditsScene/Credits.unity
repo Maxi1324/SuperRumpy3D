@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -181,20 +181,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "- Developed by DIE COOLEN -\n\n- Project Lead -\nFischer Maximilian\n\n-
-    Game Designers -\n\n\n\n\n\n\n- Programmers -\nFischer Maximilian\n\n- Sound
-    Designers - \n\n\n\n\n- Graphic Designer -\nFischer Maximilian\n\n- Player |
-    Enemy | Physics -\nFischer Maxmilian \n\n- User Interface Designers -\n\n\n\n\n-
-    Player Controlls | Abilities  -\nFischer Maximilian\n\n- Player Designer - \nFischer
-    Maximilian\nGlavan Marco-Robert\n\n- Third Party Assets -\n3D Noise: https://github.com/JimmyCushnie/Noisy-Nodes\r\nGrasShader
+    Game Designers -\n\n\n\n\n\n\n- Programmers -\n\n\n\n- Sound Designers - \n\n\n\n\n-
+    Graphic Designer -\nFischer Maximilian\n\n- Player | Enemy | Physics -\nFischer
+    Maxmilian \n\n- User Interface Designers -\n\n\n\n\n- Player Controlls | Abilities 
+    -\nFischer Maximilian\n\n- Player Designer - \nFischer Maximilian\nFidanci Mirac\n\n-
+    Third Party Assets -\n3D Noise: https://github.com/JimmyCushnie/Noisy-Nodes\r\nGrasShader
     + Tool: Minios Art https://www.patreon.com/posts/grass-geometry-2-40077798\r\nExample
     Partikel Effects: Unity \r\nOpenNat: https://www.nuget.org/packages/Open.Nat/2.1.0\r\nBeautiful
     Progress Bar Free Loadingbars: https://assetstore.unity.com/packages/2d/gui/icons/beautiful-progress-bar-free-194904\r\nClean
     Vector Icons:https://assetstore.unity.com/packages/2d/gui/icons/clean-vector-icons-132084\r\nEasyFPSCounter:
-    https://assetstore.unity.com/packages/tools/integration/easy-fps-counter-130203\nNose
-    Female Kid: https://free3d.com/3d-model/nose-v1--641848.html\nHair Female Kid:
-    https://free3d.com/3d-model/stylized-shorthair-with-a-bow-468824.html\nLips Female
-    Kid: https://free3d.com/3d-model/lips-v1--931039.html\n\n- Special Thanks -\nTo
-    our class 3BHIF\nAnd thank you all for playing our game\nSincerly \nDIE COOLEN"
+    https://assetstore.unity.com/packages/tools/integration/easy-fps-counter-130203\n\n-
+    Special Thanks -\nGlavan Marco-Robert for creating the credits\nAnd thank you
+    all for playing our game\nSincerly \nDIE COOLEN"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 97020f01cff9a8f4eb7086a16c5a4f66, type: 2}
   m_sharedMaterial: {fileID: 2897173414622584230, guid: 97020f01cff9a8f4eb7086a16c5a4f66, type: 2}
@@ -353,6 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 259427304}
   - component: {fileID: 259427305}
+  - component: {fileID: 259427306}
   m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
@@ -401,6 +400,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &259427306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259427303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19bd100020f2b34bae33d27efb2e953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LM: {fileID: 0}
 --- !u!1 &589676264
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,8 +471,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Limani Lindor\nFidanci Mirac\nGavranic Marko\nFischer Maximilian\nGlavan
-    Marco-Robert\n\n\n\n\n\nFidanci Mirac\nFischer Maximilian\n\n\n\n\n\n\n\n\n\nFischer
-    Maximilian\nLimani Lindor \n"
+    Marco-Robert\n\n\nFischer Maximilian\nGlavan Marco-Robert\n\n\nGlavan Marco-Robert\nFischer
+    Maximilian\nFidanci Mirac\n\n\n\n\n\n\n\n\nFischer Maximilian\nLimani Lindor
+    \nGlavan Marco-Robert"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 97020f01cff9a8f4eb7086a16c5a4f66, type: 2}
   m_sharedMaterial: {fileID: 2897173414622584230, guid: 97020f01cff9a8f4eb7086a16c5a4f66, type: 2}
@@ -815,11 +828,14 @@ MonoBehaviour:
 
 
 
-
-
-
     Lead
-    Sound Designer
+    Programmer
+
+    Programmer
+
+
+
+    Lead Sound Designer
 
     Sound Designers
 
@@ -832,7 +848,8 @@ MonoBehaviour:
 
 
 
-    Lead UI Designer
+    Lead
+    UI Designer
 
     UI Designers '
   m_isRightToLeft: 0

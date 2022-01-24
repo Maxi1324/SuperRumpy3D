@@ -6,7 +6,12 @@ namespace Generell.LevelManager1
     public class BergLevelSubArea1 : LevelManager
     {
         public List<int> There = new List<int>();
-        
+        public GameObject Upgrade;
+
+        private new void Start()
+        {
+            base.Start();
+        }
         public override void ResetLevel()
         {
         }
@@ -21,7 +26,7 @@ namespace Generell.LevelManager1
 
         public void RaetzelFertig()
         {
-
+            Upgrade.SetActive(true);
         }
 
         public void AddToRaetzel(int typ)

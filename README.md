@@ -7,4 +7,5 @@ This Projekt was made in Unity
 
 In Order to play this Projekt, you can download the release
 
-itch.io link: F:\0000Schule\20210919_SUNDAY_PRE\PREProjekt\Builds
+itch.io link: https://maxi1324.itch.io/superrumpy3d
+trailer: https://youtu.be/TgxoFQkYPAs

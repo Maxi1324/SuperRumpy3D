@@ -1,4 +1,4 @@
-# COOLESGAME
+# Super Rumpy 3D
 This Game is a really fun 3D Local Multiplayer Plattformer
 It has 5 levels with diffrent themes.
 The Multiplayer mode is local.

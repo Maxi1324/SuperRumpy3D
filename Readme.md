@@ -75,6 +75,12 @@ In oder to perform a HighJump, stand still hold the Z(Bumper) Button and Jump
 
 ![](https://www.youtube.com/embed/TgxoFQkYPAs)
 
+# Klassendiagramm (UML)
+!["KlassenUndModuleAnsicht"](imgs/Coolesgame.png)
+
+Hier sieht man unser Klassendiagramm für all die Interessierten. Beschreibungen zu den Klassen sieht man an Hand der Gelben Felder.
+
+
 # External Tools 
 - Blender
 - Unity
@@ -87,3 +93,4 @@ In oder to perform a HighJump, stand still hold the Z(Bumper) Button and Jump
 - Beautiful Progress Bar Free Loadingbars: https://assetstore.unity.com/packages/2d/gui/icons/beautiful-progress-bar-free-194904
 - Clean Vector Icons:https://assetstore.unity.com/packages/2d/gui/icons/clean-vector-icons-132084
 - EasyFPSCounter: https://assetstore.unity.com/packages/tools/integration/easy-fps-counter-130203
+

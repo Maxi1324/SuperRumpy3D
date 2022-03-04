@@ -2,4 +2,3 @@
 * text=auto
 * linguist-vendored
 *.cs linguist-vendored=false
-*.shader linguist-vendored=false
